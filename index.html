@@ -37,6 +37,7 @@
       background: var(--white);
       color: var(--text);
       overflow-x: hidden;
+      position: relative;
     }
 
     /* ── NAVBAR ── */
@@ -1288,34 +1289,83 @@
       .card-2 { top: 80px; right: -5px; }
       .card-3 { bottom: 80px; right: 0px; }
 
+      /* Journey Sticky Scroll Overrides for Tablet and Mobile */
+      .journey-scroll-story {
+        height: auto !important;
+      }
+      .journey-sticky {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: transparent !important;
+        padding: 20px 0 40px;
+      }
       .tree-layout {
         height: auto;
+        max-height: none;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 24px;
+        position: relative;
+        padding-left: 32px; /* Space for the timeline line */
+        margin-top: 25px;
+      }
+      /* Vertical Timeline Line */
+      .tree-layout::before {
+        content: '';
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        bottom: 10px;
+        width: 3px;
+        background: linear-gradient(to bottom, var(--blue), var(--orange));
+        border-radius: 4px;
+        z-index: 1;
       }
       .tree-container {
         display: none;
       }
       .journey-step {
-        position: static;
-        width: 100%;
+        position: relative !important;
+        width: 100% !important;
         opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        transform: translateY(20px);
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 2;
       }
       #step-1, #step-2, #step-3, #step-4, #step-5 {
-        top: auto; left: auto; right: auto;
-        opacity: 0;
-        transform: translateY(30px);
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+      }
+      .journey-step.visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
       }
       .journey-step .step-card {
         animation: none !important;
         border-radius: 16px !important;
+        box-shadow: 0 4px 20px rgba(30, 50, 100, 0.05);
+        border: 1.5px solid rgba(59, 111, 212, 0.08);
       }
-      .journey-step.visible {
-        opacity: 1;
-        transform: translateY(0);
+      
+      /* Bullets on timeline */
+      .journey-step::before {
+        content: '';
+        position: absolute;
+        left: -25px; /* center exactly on the vertical track line */
+        top: 24px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 3px solid var(--blue);
+        z-index: 3;
+        box-shadow: 0 0 0 4px rgba(59, 111, 212, 0.15);
+      }
+      .journey-step:nth-of-type(even)::before {
+        border-color: var(--orange);
+        box-shadow: 0 0 0 4px rgba(232, 119, 34, 0.15);
       }
 
       .germany-cards {
@@ -1443,36 +1493,7 @@
       .cards:hover .card { flex-grow: 1; }
       .cards .card:hover { flex-grow: 1; }
 
-      /* Journey */
-      .tree-layout {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
-      .tree-container {
-        display: none;
-      }
-      .journey-step {
-        position: static;
-        width: 100%;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      }
-      #step-1, #step-2, #step-3, #step-4, #step-5 {
-        top: auto; left: auto; right: auto;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      .journey-step.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .journey-step .step-card {
-        animation: none !important;
-        border-radius: 16px !important;
-      }
+
 
       /* Why Germany */
       .why-section { padding: 35px 0; }
@@ -1543,10 +1564,76 @@
       .hero-heading { font-size: 26px; }
       .window-info-box { padding: 20px; }
     }
+    /* ── FLIGHT PATH & AIRPLANE ── */
+    .flight-path-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2; /* Runs behind the main website content */
+      pointer-events: none;
+      overflow: hidden;
+    }
+    
+    .flight-path-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    
+    .flight-path-line {
+      fill: none;
+      stroke: var(--orange); /* Muted/faint orange color */
+      stroke-width: 2.5;
+      stroke-dasharray: 10, 10;
+      stroke-linecap: round;
+      opacity: 0.15; /* Subtle opacity so it looks like it's running behind */
+    }
+    
+    .airplane-pointer {
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      z-index: 90; /* Floats above content, but stays behind the sticky navbar (z-index 100) */
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      will-change: left, top, transform;
+      transition: transform 0.1s ease-out, opacity 0.3s ease;
+    }
+    
+    .airplane-pointer svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 3px 6px rgba(232, 119, 34, 0.3));
+    }
+    
+    /* Takeoff animation when scrolling near the bottom */
+    .airplane-pointer.take-off {
+      transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-out;
+      transform: translate(400px, -400px) rotate(-35deg) scale(0.5) !important;
+      opacity: 0;
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- ── FLIGHT PATH & AIRPLANE POINTER ── -->
+  <!-- Flight path container stays in the background (z-index: 2) -->
+  <div class="flight-path-container">
+    <svg class="flight-path-svg" viewBox="0 0 1000 5000" preserveAspectRatio="none">
+      <!-- Path starts at y = 150 to sit below the 72px sticky navbar on initial page load -->
+      <path id="flight-path" class="flight-path-line" d="M 850,150 C 720,220 200,180 150,450 C 100,750 900,650 850,1050 C 800,1450 100,1350 120,1850 C 150,2350 950,2250 900,2750 C 850,3250 80,3150 100,3650 C 120,4150 920,4050 880,4550 C 850,4900 650,4920 600,4950" />
+    </svg>
+  </div>
+
+  <!-- Airplane pointer floats on top (z-index: 90) -->
+  <div id="airplane-pointer" class="airplane-pointer">
+    <svg viewBox="0 0 24 24" fill="var(--orange)" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l7 2.5z"/>
+    </svg>
+  </div>
 
   <!-- ── NAVBAR ── -->
   <nav>
@@ -2148,11 +2235,16 @@
       'step-5': 0.86,   // canopy level — last to appear
     };
 
+    let mobileStepsObserved = false;
+
     function runJourneyScroll() {
       const isMobile = window.innerWidth <= 1024;
       if (isMobile) {
         if (treeImage) treeImage.style.clipPath = 'none';
-        journeySteps.forEach(s => s.classList.add('visible'));
+        if (!mobileStepsObserved) {
+          journeySteps.forEach(s => observer.observe(s));
+          mobileStepsObserved = true;
+        }
         return;
       }
       if (!scrollStory || !treeImage) return;
@@ -2238,6 +2330,66 @@
     setTimeout(() => {
       document.querySelectorAll('.stat-card .countup').forEach(el => countUp(el));
     }, 1200);
+    // ── AIRPLANE SCROLL ANIMATION ──
+    const airplane = document.getElementById('airplane-pointer');
+    const path = document.getElementById('flight-path');
+    const pathContainer = document.querySelector('.flight-path-container');
+    const viewBoxWidth = 1000;
+    const viewBoxHeight = 5000;
+
+    function animateAirplane() {
+      if (!airplane || !path || !pathContainer) return;
+
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+      const maxScroll = docHeight - winHeight;
+      if (maxScroll <= 0) return;
+
+      const scrollPercent = Math.max(0, Math.min(1, window.scrollY / maxScroll));
+
+      // Trigger takeoff animation near the footer
+      if (scrollPercent > 0.97) {
+        airplane.classList.add('take-off');
+        return;
+      } else {
+        airplane.classList.remove('take-off');
+      }
+
+      // Calculate position along the SVG path
+      const pathLength = path.getTotalLength();
+      const distance = scrollPercent * pathLength;
+      const point = path.getPointAtLength(distance);
+
+      // Calculate tangent angle for rotation
+      const nextDistance = Math.min(pathLength, distance + 2);
+      const nextPoint = path.getPointAtLength(nextDistance);
+      const angleRad = Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x);
+      const angleDeg = (angleRad * 180) / Math.PI;
+
+      // Map local SVG coordinates to absolute page pixel positions
+      const containerWidth = pathContainer.clientWidth;
+      const containerHeight = pathContainer.clientHeight;
+      const pxX = (point.x / viewBoxWidth) * containerWidth;
+      const pxY = (point.y / viewBoxHeight) * containerHeight;
+
+      // Position and rotate the airplane (SVG points up, so offset by 90deg)
+      airplane.style.left = `${pxX}px`;
+      airplane.style.top = `${pxY}px`;
+      airplane.style.transform = `translate(-50%, -50%) rotate(${angleDeg + 90}deg)`;
+    }
+
+    window.addEventListener('scroll', animateAirplane, { passive: true });
+    window.addEventListener('resize', animateAirplane);
+    // Initialize after a slight delay to allow rendering and height calculations
+    setTimeout(animateAirplane, 100);
+
+    // Watch for body height changes (as images/fonts load) and dynamically adjust airplane position
+    if (typeof ResizeObserver !== 'undefined') {
+      const resizeObserver = new ResizeObserver(() => {
+        animateAirplane();
+      });
+      resizeObserver.observe(document.body);
+    }
   </script>
 </body>
 
