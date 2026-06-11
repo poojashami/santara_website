@@ -503,16 +503,42 @@
       margin: 0 auto;
     }
 
-    /* Tree layout — full width, fixed height, absolute cards */
+    /* Tree layout — sticky scroll story */
+    .journey-section {
+      background: #ffffff;
+      position: relative;
+      padding-top: 40px;
+    }
+
+    /* Tall wrapper — user SCROLLS THROUGH this */
+    .journey-scroll-story {
+      position: relative;
+      height: 280vh;   /* 280% of viewport = lots of scroll time */
+    }
+
+    /* Sticky panel — stays fixed while user scrolls through the story */
+    .journey-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .journey-sticky .journey-inner {
+      width: 100%;
+    }
+
+    /* Tree layout — fills the sticky viewport */
     .tree-layout {
       position: relative;
       max-width: 1100px;
       width: 100%;
-      /* Tree PNG is 2528×1686 ≈ 1.499 ratio.
-         At 1100px wide → natural height = 1100/1.499 = 734px.
-         Add a little extra so cards at very top/bottom aren't clipped */
-      height: 760px;
-      margin: 12px auto 0;
+      height: 78vh;
+      max-height: 700px;
+      margin: 0 auto;
     }
 
     /* Tree spans full width of layout, anchored to bottom */
@@ -531,14 +557,9 @@
       height: 100%;
       object-fit: contain;
       object-position: center bottom;
-      /* Starts hidden — clip-path removed by JS when section enters view */
       clip-path: inset(100% 0 0 0);
-      transition: clip-path 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-    }
-
-    /* Tree fully revealed */
-    .tree-image.tree-visible {
-      clip-path: inset(0% 0 0 0);
+      /* Fast linear transition so clip-path tracks scroll smoothly */
+      transition: clip-path 0.06s linear;
     }
 
     /* ── CARD POSITIONS (absolute, matching each branch on the tree) ── */
@@ -552,11 +573,11 @@
 
     .journey-step {
       position: absolute;
-      width: 34%;     /* Wide enough for content, clear of tree trunk */
+      width: 34%;
       z-index: 2;
-      /* Cards start slightly off-screen (will slide in) */
       opacity: 0;
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      /* Same transition for both enter AND exit (bidirectional) */
+      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
     }
 
     /* Right cards slide from right */
@@ -564,18 +585,11 @@
     /* Left cards slide from left */
     #step-2, #step-4            { transform: translateX(-50px); }
 
-    /* Visible: slide in and fully opaque */
+    /* Visible: slide in */
     .journey-step.visible {
       opacity: 1;
       transform: translateX(0);
     }
-
-    /* Staggered delays so cards appear one by one (bottom → top) */
-    #step-1.visible { transition-delay: 0s; }
-    #step-2.visible { transition-delay: 0.15s; }
-    #step-3.visible { transition-delay: 0.30s; }
-    #step-4.visible { transition-delay: 0.45s; }
-    #step-5.visible { transition-delay: 0.60s; }
 
     .step-card {
       background: #ffffff;
@@ -1786,6 +1800,7 @@
 
   <!-- ── YOUR JOURNEY ── -->
   <section class="journey-section">
+    <!-- Heading stays above the scroll story -->
     <div class="journey-inner">
       <div class="journey-header">
         <span class="journey-tag">YOUR JOURNEY</span>
@@ -1793,61 +1808,68 @@
         <p class="journey-desc">Every meaningful journey begins with a single step.<br>Stanora guides you through every
           stage — from preparation and guidance to building a future in Germany.</p>
       </div>
+    </div>
 
-      <div class="tree-layout">
-        <!-- Center Column: Growing Tree -->
-        <div class="tree-container">
-          <img src="./myimages/tree.png" alt="Growing Tree" class="tree-image">
-        </div>
+    <!-- Scroll story: tall wrapper so user scrolls THROUGH this section -->
+    <div class="journey-scroll-story">
+      <div class="journey-sticky">
+        <div class="journey-inner">
+          <div class="tree-layout">
+            <!-- Growing Tree -->
+            <div class="tree-container">
+              <img src="./myimages/tree.png" alt="Growing Tree" class="tree-image">
+            </div>
 
-        <!-- Staggered steps -->
-        <div class="journey-step from-right" id="step-1">
-          <div class="step-card">
-            <div class="step-icon" style="background:rgba(59,111,212,0.1)">🔵</div>
-            <div class="step-tag">01 — Begin Your Journey</div>
-            <div class="step-title">A dream takes root.</div>
-            <div class="step-desc">Create your profile and discover pathways aligned with your goals, aspirations, and
-              future career opportunities in Germany.</div>
-          </div>
-        </div>
+            <!-- Step cards (absolutely positioned at branch heights) -->
+            <div class="journey-step from-right" id="step-1">
+              <div class="step-card">
+                <div class="step-icon" style="background:rgba(59,111,212,0.1)">🔵</div>
+                <div class="step-tag">01 — Begin Your Journey</div>
+                <div class="step-title">A dream takes root.</div>
+                <div class="step-desc">Create your profile and discover pathways aligned with your goals, aspirations, and
+                  future career opportunities in Germany.</div>
+              </div>
+            </div>
 
-        <div class="journey-step from-left" id="step-2">
-          <div class="step-card">
-            <div class="step-icon" style="background:rgba(59,111,212,0.1)">📖</div>
-            <div class="step-tag">02 — Learn &amp; Prepare</div>
-            <div class="step-title">Preparing for What's Next</div>
-            <div class="step-desc">Build confidence through language training, skill development, and guidance
-              designed for your journey ahead.</div>
-          </div>
-        </div>
+            <div class="journey-step from-left" id="step-2">
+              <div class="step-card">
+                <div class="step-icon" style="background:rgba(59,111,212,0.1)">📖</div>
+                <div class="step-tag">02 — Learn &amp; Prepare</div>
+                <div class="step-title">Preparing for What's Next</div>
+                <div class="step-desc">Build confidence through language training, skill development, and guidance
+                  designed for your journey ahead.</div>
+              </div>
+            </div>
 
-        <div class="journey-step from-right" id="step-3">
-          <div class="step-card">
-            <div class="step-icon" style="background:rgba(59,111,212,0.1)">📋</div>
-            <div class="step-tag">03 — Documentation &amp; Visa</div>
-            <div class="step-title">Clarity at Every Step</div>
-            <div class="step-desc">Navigate every process with structured support, transparent guidance, and
-              step-by-step assistance.</div>
-          </div>
-        </div>
+            <div class="journey-step from-right" id="step-3">
+              <div class="step-card">
+                <div class="step-icon" style="background:rgba(59,111,212,0.1)">📋</div>
+                <div class="step-tag">03 — Documentation &amp; Visa</div>
+                <div class="step-title">Clarity at Every Step</div>
+                <div class="step-desc">Navigate every process with structured support, transparent guidance, and
+                  step-by-step assistance.</div>
+              </div>
+            </div>
 
-        <div class="journey-step from-left" id="step-4">
-          <div class="step-card">
-            <div class="step-icon" style="background:rgba(232,119,34,0.1)">〰</div>
-            <div class="step-tag">04 — Transition with Confidence</div>
-            <div class="step-title">Crossing New Paths</div>
-            <div class="step-desc">Move beyond preparation and step into a new chapter shaped by guidance,
-              opportunity, and global experiences.</div>
-          </div>
-        </div>
+            <div class="journey-step from-left" id="step-4">
+              <div class="step-card">
+                <div class="step-icon" style="background:rgba(232,119,34,0.1)">〰</div>
+                <div class="step-tag">04 — Transition with Confidence</div>
+                <div class="step-title">Crossing New Paths</div>
+                <div class="step-desc">Move beyond preparation and step into a new chapter shaped by guidance,
+                  opportunity, and global experiences.</div>
+              </div>
+            </div>
 
-        <div class="journey-step from-right" id="step-5">
-          <div class="step-card" style="border-color: rgba(232,119,34,0.3);">
-            <div class="step-icon" style="background:rgba(232,119,34,0.1)">🌐</div>
-            <div class="step-tag" style="color:var(--orange)">05 — Grow in Germany</div>
-            <div class="step-title">Where New Futures Begin</div>
-            <div class="step-desc">Step into opportunities that open pathways toward long-term growth, global
-              exposure, and a better tomorrow.</div>
+            <div class="journey-step from-right" id="step-5">
+              <div class="step-card" style="border-color: rgba(232,119,34,0.3);">
+                <div class="step-icon" style="background:rgba(232,119,34,0.1)">🌐</div>
+                <div class="step-tag" style="color:var(--orange)">05 — Grow in Germany</div>
+                <div class="step-title">Where New Futures Begin</div>
+                <div class="step-desc">Step into opportunities that open pathways toward long-term growth, global
+                  exposure, and a better tomorrow.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2101,35 +2123,55 @@
     // Observe all animated elements
     document.querySelectorAll('.what-card, .germany-card').forEach(el => observer.observe(el));
 
-    // ── JOURNEY: Cards + Tree via IntersectionObserver (one-shot when section enters view) ──
-    const journeySteps   = document.querySelectorAll('.journey-step');
-    const treeImage      = document.querySelector('.tree-image');
-    const journeySection = document.querySelector('.journey-section');
+    // ── JOURNEY: Sticky scroll story — tree grows as you scroll through the tall wrapper ──
+    const journeySteps  = document.querySelectorAll('.journey-step');
+    const treeImage     = document.querySelector('.tree-image');
+    const scrollStory   = document.querySelector('.journey-scroll-story');
 
-    if (journeySection) {
-      const journeyReveal = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Grow tree immediately via CSS transition (1.4s cubic-bezier)
-            if (treeImage) treeImage.classList.add('tree-visible');
+    const CARD_THRESHOLDS = {
+      'step-1': 0.20,   // roots level — first to appear
+      'step-2': 0.38,
+      'step-3': 0.54,
+      'step-4': 0.70,
+      'step-5': 0.86,   // canopy level — last to appear
+    };
 
-            // Stagger cards: slide in from left/right one by one
-            journeySteps.forEach(step => step.classList.add('visible'));
+    function runJourneyScroll() {
+      const isMobile = window.innerWidth <= 1024;
+      if (isMobile) {
+        if (treeImage) treeImage.style.clipPath = 'none';
+        journeySteps.forEach(s => s.classList.add('visible'));
+        return;
+      }
+      if (!scrollStory || !treeImage) return;
 
-            journeyReveal.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.10 });   // fires when 10% of section is visible
-      journeyReveal.observe(journeySection);
+      const rect    = scrollStory.getBoundingClientRect();
+      const storyH  = scrollStory.offsetHeight;  // 280vh
+      const vh      = window.innerHeight;
+
+      // How far through the tall story have we scrolled?
+      // scrolled = 0 when story top = viewport top (sticky just locked)
+      // scrolled = storyH - vh when story bottom = viewport bottom (sticky unlocks)
+      const scrolled = -rect.top;              // px scrolled into the story
+      const maxScroll = storyH - vh;           // total scroll range inside story
+
+      let p = scrolled / maxScroll;
+      p = Math.max(0, Math.min(1, p));
+
+      // Tree: clip from top → reveals from bottom upward
+      treeImage.style.clipPath = `inset(${Math.round((1 - p) * 100)}% 0 0 0)`;
+
+      // Cards: appear/disappear bidirectionally
+      journeySteps.forEach(step => {
+        if (p >= (CARD_THRESHOLDS[step.id] ?? 0)) step.classList.add('visible');
+        else step.classList.remove('visible');
+      });
     }
 
-    // On mobile: ensure clip-path is removed (no tree clip on small screens)
-    if (treeImage && window.innerWidth <= 1024) {
-      treeImage.classList.add('tree-visible');
-    }
-    window.addEventListener('resize', () => {
-      if (treeImage && window.innerWidth <= 1024) treeImage.classList.add('tree-visible');
-    });
+    window.addEventListener('scroll', runJourneyScroll, { passive: true });
+    window.addEventListener('resize', runJourneyScroll);
+    runJourneyScroll();
+
 
     // Trigger count-up when hero stat cards come in
     const statObserver = new IntersectionObserver((entries) => {
