@@ -1623,8 +1623,8 @@
   <!-- Flight path container stays in the background (z-index: 2) -->
   <div class="flight-path-container">
     <svg class="flight-path-svg" viewBox="0 0 1000 5000" preserveAspectRatio="none">
-      <!-- Path starts at y = 150 to sit below the 72px sticky navbar on initial page load -->
-      <path id="flight-path" class="flight-path-line" d="M 850,150 C 720,220 200,180 150,450 C 100,750 900,650 850,1050 C 800,1450 100,1350 120,1850 C 150,2350 950,2250 900,2750 C 850,3250 80,3150 100,3650 C 120,4150 920,4050 880,4550 C 850,4900 650,4920 600,4950" />
+      <!-- Path starts at y = 150 to sit below the 72px sticky navbar on initial page load, and descends faster in the first two sections to keep the airplane visible in the viewport -->
+      <path id="flight-path" class="flight-path-line" d="M 850,150 C 720,280 200,220 150,650 C 100,900 900,1000 850,1350 C 800,1650 100,1550 120,1850 C 150,2350 950,2250 900,2750 C 850,3250 80,3150 100,3650 C 120,4150 920,4050 880,4550 C 850,4900 650,4920 600,4950" />
     </svg>
   </div>
 
