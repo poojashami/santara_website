@@ -1,1812 +1,2073 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stanora – Building Trusted Pathways for Talented Skilled Professionals</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="cardcss.css">
-  <link rel="stylesheet" href="gloab.css">
-  <style>
-    :root {
-      --navy: #1a2744;
-      --orange: #e87722;
-      --blue: #3b6fd4;
-      --light-blue: #dce8f8;
-      --bg: #f0f6ff;
-      --white: #ffffff;
-      --gray: #6b7a99;
-      --text: #1a2744;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--white);
-      color: var(--text);
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* ── NAVBAR ── */
-    nav {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(59, 111, 212, 0.1);
-      padding: 0 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: 0.05em;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--navy);
-      font-size: 0.92rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-    .nav-btn-mobile-wrapper {
-      display: none;
-    }
-
-    .btn-register {
-      background: var(--navy);
-      color: #fff;
-      padding: 10px 24px;
-      border-radius: 8px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-register:hover {
-      background: var(--blue);
-      transform: translateY(-1px);
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding-top: 10px;
-      background-color: #0d1f45;
-      color: #ffffff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero .hero-badge {
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .hero .hero-title {
-      color: #ffffff;
-    }
-
-    .hero .hero-desc {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .hero .feat-item {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .hero .feat-item img {
-      filter: brightness(0) invert(1);
-    }
-
-    .hero .btn-primary {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: #ffffff;
-    }
-
-    .hero .btn-primary:hover {
-      background: #d46513;
-      border-color: #d46513;
-      box-shadow: 0 8px 24px rgba(232, 119, 34, 0.3);
-    }
-
-    .hero .btn-outline {
-      border-color: #ffffff;
-      color: #ffffff;
-    }
-
-    .hero .btn-outline:hover {
-      background: #ffffff;
-      color: #0d1f45;
-    }
-
-    .hero .hero-bg-circle {
-      background: radial-gradient(circle, rgba(59, 111, 212, 0.25) 0%, transparent 70%);
-    }
-
-    .bannerrightimag {
-      width: 478px;
-
-    }
-
-    .hero-bg-circle {
-      position: absolute;
-      top: -10%;
-      right: -5%;
-      width: 60vw;
-      height: 60vw;
-      max-width: 700px;
-      max-height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(59, 111, 212, 0.12) 0%, transparent 70%);
-      animation: pulse-bg 6s ease-in-out infinite;
-    }
-
-    @keyframes pulse-bg {
-
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 0.7;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Stanora – Building Trusted Pathways for Talented Skilled Professionals
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cardcss.css" />
+    <link rel="stylesheet" href="gloab.css" />
+    <style>
+      :root {
+        --navy: #1a2744;
+        --orange: #e87722;
+        --blue: #3b6fd4;
+        --light-blue: #dce8f8;
+        --bg: #f0f6ff;
+        --white: #ffffff;
+        --gray: #6b7a99;
+        --text: #1a2744;
       }
 
-      50% {
-        transform: scale(1.08);
-        opacity: 1;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
 
-    /* Dashed diagonal line */
-    .dashed-line {
-      position: absolute;
-      width: 2px;
-      height: 0;
-      border-left: 2px dashed rgba(100, 130, 200, 0.35);
-      animation: grow-line 2s ease-out 0.5s forwards;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    @keyframes grow-line {
-      to {
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--white);
+        color: var(--text);
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* ── NAVBAR ── */
+      nav {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(59, 111, 212, 0.1);
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--navy);
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 36px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--navy);
+        font-size: 0.92rem;
+        font-weight: 500;
+        transition: color 0.2s;
+        position: relative;
+        padding-bottom: 6px;
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 100%;
+        height: 2px;
+        background-color: var(--blue);
+        border-radius: 2px;
+        transition: transform 0.25s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--blue);
+      }
+
+      .nav-btn-mobile-wrapper {
+        display: none;
+      }
+
+      .btn-register {
+        background: var(--navy);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+
+      .btn-register:hover {
+        background: var(--blue);
+        transform: translateY(-1px);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        padding-top: 10px;
+        background-color: #0d1f45;
+        color: #ffffff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero .hero-badge {
+        border: 1.5px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .hero .hero-title {
+        color: #ffffff;
+      }
+
+      .hero .hero-desc {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .hero .feat-item {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .hero .feat-item img {
+        filter: brightness(0) invert(1);
+      }
+
+      .hero .btn-primary {
+        background: var(--orange);
+        border-color: var(--orange);
+        color: #ffffff;
+      }
+
+      .hero .btn-primary:hover {
+        background: #d46513;
+        border-color: #d46513;
+        box-shadow: 0 8px 24px rgba(232, 119, 34, 0.3);
+      }
+
+      .hero .btn-outline {
+        border-color: #ffffff;
+        color: #ffffff;
+      }
+
+      .hero .btn-outline:hover {
+        background: #ffffff;
+        color: #0d1f45;
+      }
+
+      .hero .hero-bg-circle {
+        background: radial-gradient(
+          circle,
+          rgba(59, 111, 212, 0.25) 0%,
+          transparent 70%
+        );
+      }
+
+      .bannerrightimag {
+        width: 478px;
+      }
+
+      .hero-bg-circle {
+        position: absolute;
+        top: -10%;
+        right: -5%;
+        width: 60vw;
+        height: 60vw;
+        max-width: 700px;
+        max-height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(59, 111, 212, 0.12) 0%,
+          transparent 70%
+        );
+        animation: pulse-bg 6s ease-in-out infinite;
+      }
+
+      @keyframes pulse-bg {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+
+        50% {
+          transform: scale(1.08);
+          opacity: 1;
+        }
+      }
+
+      /* Dashed diagonal line */
+      .dashed-line {
+        position: absolute;
+        width: 2px;
+        height: 0;
+        border-left: 2px dashed rgba(100, 130, 200, 0.35);
+        animation: grow-line 2s ease-out 0.5s forwards;
+      }
+
+      @keyframes grow-line {
+        to {
+          height: 500px;
+        }
+      }
+
+      .hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 35px 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        border: 1.5px solid var(--navy);
+        border-radius: 5px;
+        padding: 5px 16px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 16px;
+        animation: fade-up 0.6s ease-out both;
+      }
+
+      .hero-title {
+        font-family: "DM Sans", sans-serif;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--navy);
+        margin-bottom: 12px;
+        animation: fade-up 0.7s ease-out 0.1s both;
+        font-size: 41px;
+      }
+
+      .hero-title .orange {
+        color: var(--orange);
+      }
+
+      .hero-desc {
+        font-size: 1rem;
+        color: var(--gray);
+        line-height: 1.7;
+        max-width: 480px;
+        margin-bottom: 20px;
+        animation: fade-up 0.7s ease-out 0.2s both;
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 24px;
+        animation: fade-up 0.7s ease-out 0.3s both;
+      }
+
+      .btn-primary {
+        background: var(--navy);
+        color: #fff;
+        padding: 13px 28px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s;
+        border: 2px solid var(--navy);
+      }
+
+      .btn-primary:hover {
+        background: var(--blue);
+        border-color: var(--blue);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(59, 111, 212, 0.3);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--navy);
+        padding: 13px 28px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: 2px solid var(--navy);
+        transition: all 0.2s;
+      }
+
+      .btn-outline:hover {
+        background: var(--navy);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      .hero-features {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        animation: fade-up 0.7s ease-out 0.4s both;
+      }
+
+      .feat-item {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #1f3866;
+      }
+
+      .hero-features img {
+        width: 22px;
+      }
+
+      /* Hero right side */
+      .hero-right {
+        position: relative;
+        min-height: 520px;
+        animation: fade-in 1s ease-out 0.3s both;
+      }
+
+      .hero-img-wrapper {
+        position: relative;
+        width: 100%;
+        height: 520px;
+      }
+
+      .hero-img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-45%);
+        width: 380px;
         height: 500px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
       }
-    }
 
-    .hero-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 35px 5%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-      width: 100%;
-    }
+      .hero-img-placeholder {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-45%);
+        /* width: 380px; */
+        /* height: 500px; */
+        /* background: linear-gradient(160deg, #c5d8f5 0%, #a8c4e8 50%, #b8d4f0 100%); */
+        /* border-radius: 20px 20px 0 0; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      border: 1.5px solid var(--navy);
-      border-radius: 5px;
-      padding: 5px 16px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 16px;
-      animation: fade-up 0.6s ease-out both;
-    }
+      .hero-img-placeholder::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 260px;
+        height: 420px;
+        background: linear-gradient(
+          to top,
+          rgba(59, 111, 212, 0.15),
+          transparent
+        );
+        border-radius: 50% 50% 0 0;
+      }
 
-    .hero-title {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.20;
-      color: var(--navy);
-      margin-bottom: 12px;
-      animation: fade-up 0.7s ease-out 0.1s both;
-      font-size: 41px;
-    }
+      /* Silhouette person */
+      .person-silhouette {
+        position: absolute;
+        bottom: 0;
+        width: 200px;
+        height: 360px;
+        background: linear-gradient(
+          to bottom,
+          #7fa8d4 0%,
+          #5580b8 40%,
+          #3b6fd4 100%
+        );
+        border-radius: 50% 50% 0 0;
+        opacity: 0.5;
+      }
 
-    .hero-title .orange {
-      color: var(--orange);
-    }
+      /* Stat cards */
+      .stat-card {
+        position: absolute;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.92
+        ); /* Higher opacity for clear readability over dynamic globe */
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 14px;
+        padding: 14px 18px;
+        box-shadow:
+          0 8px 32px rgba(26, 39, 68, 0.1),
+          0 4px 12px rgba(26, 39, 68, 0.05);
+        min-width: 176px;
+        width: 86px;
+        transition:
+          transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
 
-    .hero-desc {
-      font-size: 1rem;
-      color: var(--gray);
-      line-height: 1.7;
-      max-width: 480px;
-      margin-bottom: 20px;
-      animation: fade-up 0.7s ease-out 0.2s both;
-    }
+      .stat-card:hover {
+        transform: translateY(-6px) !important;
+        box-shadow: 0 12px 36px rgba(26, 39, 68, 0.18);
+        border-color: rgba(59, 111, 212, 0.3);
+        background: rgba(255, 255, 255, 0.96);
+      }
 
-    .hero-btns {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-      animation: fade-up 0.7s ease-out 0.3s both;
-    }
+      .stat-card .stat-label {
+        font-size: 0.72rem;
+        color: #3e4e6c; /* Darker slate/navy tint for excellent text contrast */
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 4px;
+        font-weight: 600; /* Bold label */
+      }
 
-    .btn-primary {
-      background: var(--navy);
-      color: #fff;
-      padding: 13px 28px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      border: 2px solid var(--navy);
-    }
+      .stat-card .stat-num {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--navy);
+      }
 
-    .btn-primary:hover {
-      background: var(--blue);
-      border-color: var(--blue);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(59, 111, 212, 0.3);
-    }
+      .stat-card .stat-sub {
+        font-size: 0.75rem;
+        color: #4b5a75; /* Darker grey-blue for readability */
+        margin-top: 2.5px;
+        line-height: 1.35;
+        font-weight: 500;
+      }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--navy);
-      padding: 13px 28px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: 2px solid var(--navy);
-      transition: all 0.2s;
-    }
+      .card-1 {
+        top: -75px;
+        right: 25px;
+        animation: slide-in-right 0.8s ease-out 0.8s both, float-1 4.5s ease-in-out 1.6s infinite;
+      }
 
-    .btn-outline:hover {
-      background: var(--navy);
-      color: #fff;
-      transform: translateY(-2px);
-    }
+      .card-2 {
+        top: 95px;
+        right: -11px;
+        animation: slide-in-right 0.8s ease-out 1.0s both, float-2 5.5s ease-in-out 1.8s infinite;
+      }
 
-    .hero-features {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      animation: fade-up 0.7s ease-out 0.4s both;
-    }
+      .card-3 {
+        bottom: 117px;
+        right: 4px;
+        animation: slide-in-right 0.8s ease-out 1.2s both, float-3 5.0s ease-in-out 2.0s infinite;
+      }
 
-    .feat-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #1f3866;
-    }
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
 
-    .hero-features img {
-      width: 22px;
-    }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    /* Hero right side */
-    .hero-right {
-      position: relative;
-      min-height: 520px;
-      animation: fade-in 1s ease-out 0.3s both;
-    }
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
 
-    .hero-img-wrapper {
-      position: relative;
-      width: 100%;
-      height: 520px;
+        to {
+          opacity: 1;
+        }
+      }
 
-    }
+      @keyframes slide-in-right {
+        from {
+          opacity: 0;
+          transform: translateX(40px);
+        }
 
-    .hero-img {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-45%);
-      width: 380px;
-      height: 500px;
-      object-fit: cover;
-      border-radius: 20px 20px 0 0;
-    }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-    .hero-img-placeholder {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-45%);
-      /* width: 380px; */
-      /* height: 500px; */
-      /* background: linear-gradient(160deg, #c5d8f5 0%, #a8c4e8 50%, #b8d4f0 100%); */
-      /* border-radius: 20px 20px 0 0; */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+      @keyframes float-1 {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes float-2 {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes float-3 {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+      }
 
-    .hero-img-placeholder::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      width: 260px;
-      height: 420px;
-      background: linear-gradient(to top, rgba(59, 111, 212, 0.15), transparent);
-      border-radius: 50% 50% 0 0;
-    }
+      /* Count-up animation for stats */
+      .countup {
+        display: inline;
+      }
 
-    /* Silhouette person */
-    .person-silhouette {
-      position: absolute;
-      bottom: 0;
-      width: 200px;
-      height: 360px;
-      background: linear-gradient(to bottom, #7fa8d4 0%, #5580b8 40%, #3b6fd4 100%);
-      border-radius: 50% 50% 0 0;
-      opacity: 0.5;
-    }
+      /* ── WHAT WE DO ── */
+      .section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px 5%;
+      }
 
-    /* Stat cards */
-    .stat-card {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.92); /* Higher opacity for clear readability over dynamic globe */
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 14px;
-      padding: 14px 18px;
-      box-shadow: 0 8px 32px rgba(26, 39, 68, 0.1), 0 4px 12px rgba(26, 39, 68, 0.05);
-      min-width: 176px;
-      width: 86px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-    }
+      .section-tag {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #1a2744;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 6px;
+      }
 
-    .stat-card:hover {
-      transform: translateY(-6px) !important;
-      box-shadow: 0 12px 36px rgba(26, 39, 68, 0.18);
-      border-color: rgba(59, 111, 212, 0.3);
-      background: rgba(255, 255, 255, 0.96);
-    }
+      .section-title {
+        text-align: center;
+        font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 16px;
+      }
 
-    .stat-card .stat-label {
-      font-size: 0.72rem;
-      color: #3e4e6c; /* Darker slate/navy tint for excellent text contrast */
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 4px;
-      font-weight: 600; /* Bold label */
-    }
+      .section-desc {
+        text-align: center;
+        color: var(--gray);
+        font-size: 1rem;
+        line-height: 1.7;
+        max-width: 680px;
+        margin: 0 auto 30px;
+      }
 
-    .stat-card .stat-num {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--navy);
-    }
+      /* Tree in the middle card */
+      .card-2-tree {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        opacity: 0.6;
+      }
 
-    .stat-card .stat-sub {
-      font-size: 0.75rem;
-      color: #4b5a75; /* Darker grey-blue for readability */
-      margin-top: 2.5px;
-      line-height: 1.35;
-      font-weight: 500;
-    }
+      /* ── JOURNEY SECTION ── */
+      .journey-section {
+        background: #ffffff;
+        position: relative;
+        /* NO overflow:hidden — cards are absolutely positioned and must not be clipped */
+        padding: 40px 0 60px;
+      }
 
-    .card-1 {
-      top: -75px;
-      right: 25px;
-      animation: slide-in-right 0.8s ease-out 0.8s both;
-    }
+      .journey-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
 
-    .card-2 {
-      top: 95px;
-      right: -11px;
-      animation: slide-in-right 0.8s ease-out 1s both;
-    }
+      .journey-header {
+        text-align: center;
+      }
 
-    .card-3 {
-      bottom: 117px;
-      right: 4px;
-      animation: slide-in-right 0.8s ease-out 1.2s both;
-    }
+      .journey-tag {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        margin-bottom: 18px;
+        display: block;
+      }
 
-    @keyframes fade-up {
-      from {
+      .journey-title {
+        font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 16px;
+      }
+
+      .journey-desc {
+        color: var(--gray);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Tree layout — sticky scroll story */
+      .journey-section {
+        background: #ffffff;
+        position: relative;
+        padding-top: 40px;
+      }
+
+      /* Tall wrapper — user SCROLLS THROUGH this */
+      .journey-scroll-story {
+        position: relative;
+        height: 280vh; /* 280% of viewport = lots of scroll time */
+      }
+
+      /* Sticky panel — stays fixed while user scrolls through the story */
+      .journey-sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .journey-sticky .journey-inner {
+        width: 100%;
+      }
+
+      /* Tree layout — fills the sticky viewport */
+      .tree-layout {
+        position: relative;
+        max-width: 1100px;
+        width: 100%;
+        height: 78vh;
+        max-height: 700px;
+        margin: 0 auto;
+      }
+
+      /* Tree spans full width of layout, anchored to bottom */
+      .tree-container {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .tree-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center bottom;
+        clip-path: inset(100% 0 0 0);
+        /* Fast linear transition so clip-path tracks scroll smoothly */
+        transition: clip-path 0.06s linear;
+      }
+
+      /* ── CARD POSITIONS (absolute, matching each branch on the tree) ── */
+      /* Right side cards: step-1 (bottom), step-3, step-5 (top) */
+      #step-1 {
+        top: 70%;
+        right: 0;
+        left: auto;
+      }
+      #step-3 {
+        top: 40%;
+        right: 0;
+        left: auto;
+      }
+      #step-5 {
+        top: 5%;
+        right: 0;
+        left: auto;
+      }
+      /* Left side cards: step-2 (lower), step-4 (upper) */
+      #step-2 {
+        top: 55%;
+        left: 0;
+        right: auto;
+      }
+      #step-4 {
+        top: 22%;
+        left: 0;
+        right: auto;
+      }
+
+      .journey-step {
+        position: absolute;
+        width: 34%;
+        z-index: 2;
         opacity: 0;
-        transform: translateY(30px);
+        /* Same transition for both enter AND exit (bidirectional) */
+        transition:
+          opacity 0.45s ease-out,
+          transform 0.45s ease-out;
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      /* Right cards slide from right */
+      #step-1,
+      #step-3,
+      #step-5 {
+        transform: translateX(50px);
       }
-    }
-
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slide-in-right {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
+      /* Left cards slide from left */
+      #step-2,
+      #step-4 {
+        transform: translateX(-50px);
       }
 
-      to {
+      /* Visible: slide in */
+      .journey-step.visible {
         opacity: 1;
         transform: translateX(0);
       }
-    }
 
-    /* Count-up animation for stats */
-    .countup {
-      display: inline;
-    }
-
-    /* ── WHAT WE DO ── */
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 50px 5%;
-    }
-
-    .section-tag {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      color: #1a2744;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .section-desc {
-      text-align: center;
-      color: var(--gray);
-      font-size: 1rem;
-      line-height: 1.7;
-      max-width: 680px;
-      margin: 0 auto 30px;
-    }
-
-
-    /* Tree in the middle card */
-    .card-2-tree {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      opacity: 0.6;
-    }
-
-    /* ── JOURNEY SECTION ── */
-    .journey-section {
-      background: #ffffff;
-      position: relative;
-      /* NO overflow:hidden — cards are absolutely positioned and must not be clipped */
-      padding: 40px 0 60px;
-    }
-
-    .journey-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 5%;
-    }
-
-    .journey-header {
-      text-align: center;
-    }
-
-    .journey-tag {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      margin-bottom: 18px;
-      display: block;
-    }
-
-    .journey-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
-
-    .journey-desc {
-      color: var(--gray);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Tree layout — sticky scroll story */
-    .journey-section {
-      background: #ffffff;
-      position: relative;
-      padding-top: 40px;
-    }
-
-    /* Tall wrapper — user SCROLLS THROUGH this */
-    .journey-scroll-story {
-      position: relative;
-      height: 280vh;   /* 280% of viewport = lots of scroll time */
-    }
-
-    /* Sticky panel — stays fixed while user scrolls through the story */
-    .journey-sticky {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: #ffffff;
-    }
-
-    .journey-sticky .journey-inner {
-      width: 100%;
-    }
-
-    /* Tree layout — fills the sticky viewport */
-    .tree-layout {
-      position: relative;
-      max-width: 1100px;
-      width: 100%;
-      height: 78vh;
-      max-height: 700px;
-      margin: 0 auto;
-    }
-
-    /* Tree spans full width of layout, anchored to bottom */
-    .tree-container {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    .tree-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center bottom;
-      clip-path: inset(100% 0 0 0);
-      /* Fast linear transition so clip-path tracks scroll smoothly */
-      transition: clip-path 0.06s linear;
-    }
-
-    /* ── CARD POSITIONS (absolute, matching each branch on the tree) ── */
-    /* Right side cards: step-1 (bottom), step-3, step-5 (top) */
-    #step-1 { top: 70%; right: 0;  left: auto; }
-    #step-3 { top: 40%; right: 0;  left: auto; }
-    #step-5 { top: 5%;  right: 0;  left: auto; }
-    /* Left side cards: step-2 (lower), step-4 (upper) */
-    #step-2 { top: 55%; left: 0;   right: auto; }
-    #step-4 { top: 22%; left: 0;   right: auto; }
-
-    .journey-step {
-      position: absolute;
-      width: 34%;
-      z-index: 2;
-      opacity: 0;
-      /* Same transition for both enter AND exit (bidirectional) */
-      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-    }
-
-    /* Right cards slide from right */
-    #step-1, #step-3, #step-5 { transform: translateX(50px); }
-    /* Left cards slide from left */
-    #step-2, #step-4            { transform: translateX(-50px); }
-
-    /* Visible: slide in */
-    .journey-step.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .step-card {
-      background: #ffffff;
-      border: 1.5px solid rgba(59, 111, 212, 0.12);
-      padding: 14px 18px;
-      box-shadow: 0 4px 24px rgba(30, 50, 100, 0.08);
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    /* Leaf-shaped corners — tip points toward tree */
-    #step-2 .step-card, #step-4 .step-card {
-      border-radius: 24px 24px 0px 24px;   /* left-side cards */
-    }
-    #step-1 .step-card, #step-3 .step-card, #step-5 .step-card {
-      border-radius: 24px 24px 24px 0px;   /* right-side cards */
-    }
-
-    /* Floating keyframe */
-    @keyframes float-card {
-      0%, 100% { transform: translateY(0px); }
-      50%       { transform: translateY(-6px); }
-    }
-
-    /* Floating — starts after slide-in is done */
-    .journey-step.visible#step-1 .step-card { animation: float-card 5s ease-in-out 0.7s infinite; }
-    .journey-step.visible#step-2 .step-card { animation: float-card 5s ease-in-out 1.4s infinite; }
-    .journey-step.visible#step-3 .step-card { animation: float-card 5s ease-in-out 2.1s infinite; }
-    .journey-step.visible#step-4 .step-card { animation: float-card 5s ease-in-out 2.8s infinite; }
-    .journey-step.visible#step-5 .step-card { animation: float-card 5s ease-in-out 3.5s infinite; }
-
-    /* Hover: pause float and lift */
-    .journey-step .step-card:hover {
-      animation-play-state: paused !important;
-      box-shadow: 0 18px 44px rgba(30, 50, 100, 0.15);
-      border-color: rgba(59, 111, 212, 0.3);
-    }
-
-    .step-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.95rem;
-      margin-bottom: 6px;
-    }
-
-    .step-tag {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-    }
-
-    .step-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .step-desc {
-      font-size: 0.76rem;
-      color: var(--gray);
-      line-height: 1.45;
-    }
-
-    /* SVG Tree */
-    .tree-svg-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    #tree-svg {
-      width: 320px;
-      overflow: visible;
-    }
-
-    /* ── WHY GERMANY ── */
-    .why-section {
-      background: var(--bg);
-      padding: 50px 0;
-    }
-
-    .why-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 5%;
-    }
-
-    .germany-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .germany-card {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 32px 24px;
-      border: 1.5px solid rgba(59, 111, 212, 0.1);
-      text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.5s;
-    }
-
-    .germany-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .germany-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(59, 111, 212, 0.1);
-    }
-
-    .g-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .g-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-
-    .g-desc {
-      font-size: 0.83rem;
-      color: var(--gray);
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-
-    .g-divider {
-      height: 1.5px;
-      background: linear-gradient(to right, transparent, rgba(59, 111, 212, 0.2), transparent);
-      margin-bottom: 12px;
-    }
-
-    .g-tag {
-      font-size: 0.78rem;
-      color: var(--blue);
-      font-weight: 600;
-    }
-
-    /* Window into Germany section */
-    .window-section-wrapper {
-      background: linear-gradient(135deg, #3b8cd4f0 0%, #0c2354 100%);
-      width: 100%;
-    }
-
-    .window-section {
-      padding: 60px 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .window-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .window-text h2 {
-      font-size: clamp(1.8rem, 3vw, 2.3rem);
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .window-text p.window-subtitle {
-      color: #edf5ff;
-      font-size: 1.05rem;
-      font-weight: 500;
-      line-height: 1.5;
-      margin-bottom: 24px;
-    }
-
-    .window-info-box {
-      background: rgba(13, 31, 69, 0.65);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      color: #fff;
-      border-radius: 28px;
-      padding: 40px;
-      margin-top: 25px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      position: relative;
-      z-index: 5;
-    }
-
-    .window-info-box h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #ffffff !important;
-    }
-
-    .window-info-box p.info-box-desc {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 24px;
-    }
-
-    .window-features-new {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .feature-item-new {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .feature-icon-new {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      color: #ffffff;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .feature-icon-new svg {
-      width: 20px;
-      height: 20px;
-      stroke: #ffffff;
-      fill: none;
-    }
-
-    .feature-content-new {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .feature-title-new {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .feature-desc-new {
-      font-size: 0.83rem;
-      color: rgba(255, 255, 255, 0.75);
-      line-height: 1.45;
-    }
-
-    .window-right {
-      position: relative;
-      z-index: 5;
-    }
-
-    .window-main-img {
-      width: 122%;
-      position: relative;
-      z-index: 2;
-      display: block;
-    }
-
-    .window-watermark {
-      position: absolute;
-      top: 10%;
-      right: 0;
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.0;
-      color: rgba(255, 255, 255, 0.04);
-      text-align: right;
-      letter-spacing: 4px;
-      z-index: 1;
-      pointer-events: none;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 1024px) {
-      .window-main-img {
-        width: 100% !important;
-        max-width: 480px;
-        margin: 0 auto;
-      }
-      .window-watermark {
-        display: none;
-      }
-    }
-
-    /* footertopsec .. */
-
-
-    .hero-wrapper {
-      border-radius: 20px;
-      padding: 0px 110px;
-      max-width: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 48px;
-      position: relative;
-      overflow: hidden;
-    }
-
-
-    /* LEFT SIDE */
-    .hero-left {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .start-label {
-      display: inline-block;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #e07820;
-      border-bottom: 2px solid #e07820;
-      padding-bottom: 3px;
-      margin-bottom: 22px;
-    }
-
-    .hero-heading {
-      font-size: 58px;
-      font-weight: 800;
-      color: #0d1f45;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero-heading .highlight {
-      color: #e07820;
-    }
-
-    .hero-subtext {
-      font-size: 14.5px;
-      color: #5c6e8a;
-      line-height: 1.65;
-      max-width: 360px;
-    }
-
-    /* RIGHT SIDE */
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      min-width: 270px;
-      margin-top: 46px;
-    }
-    .kloiop{
-      margin-top: -60px;
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: #0d1f45;
-      color: #ffffff;
-      border: none;
-      border-radius: 9px;
-      padding: 13px 28px;
-      font-size: 14px;
-      font-weight: 700;
-      font-family: 'Manrope', sans-serif;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover {
-      background: #162d5e;
-      transform: translateY(-1px);
-    }
-
-    .btn-primary:active {
-      transform: scale(0.98);
-    }
-
-    .btn-secondary {
-      background: #ffffff;
-      color: #0d1f45;
-      border: 1.5px solid #0d1f45;
-      border-radius: 9px;
-      padding: 13px 28px;
-      font-size: 14px;
-      font-weight: 700;
-      font-family: 'Manrope', sans-serif;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-
-    .btn-secondary:hover {
-      background: #f0f4ff;
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary:active {
-      transform: scale(0.98);
-    }
-
-    /* Feature list */
-    .feature-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #1a2d4e;
-    }
-
-    .check-circle {
-      width: 22px;
-      height: 22px;
-      border: 2px solid #1a6bbf;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .check-circle svg {
-      width: 12px;
-      height: 12px;
-    }
-
-    /* Responsive */
-    @media (max-width: 720px) {
-      .hero-wrapper {
-        flex-direction: column;
-        padding: 40px 28px;
-        gap: 32px;
+      .step-card {
+        background: #ffffff;
+        border: 1.5px solid rgba(59, 111, 212, 0.12);
+        padding: 14px 18px;
+        box-shadow: 0 4px 24px rgba(30, 50, 100, 0.08);
+        transition:
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
       }
 
-      .hero-heading {
-        font-size: 30px;
+      /* Leaf-shaped corners — tip points toward tree */
+      #step-2 .step-card,
+      #step-4 .step-card {
+        border-radius: 24px 24px 0px 24px; /* left-side cards */
+      }
+      #step-1 .step-card,
+      #step-3 .step-card,
+      #step-5 .step-card {
+        border-radius: 24px 24px 24px 0px; /* right-side cards */
       }
 
-      .hero-right {
-        min-width: unset;
-        width: 100%;
+      /* Floating keyframe */
+      @keyframes float-card {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
       }
-    }
 
-    /* ── FOOTER ── */
-    footer {
-      background-image: url('./myimages/FOOTER\ bg.png');
-      padding: 70px 5% 30px;
-      color: rgba(255, 255, 255, 0.75);
-      background-size: cover;
-    }
-
-    .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1.5fr;
-      gap: 60px;
-      margin-bottom: 50px;
-    }
-
-    .footer-logo {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .footer-logo-mark {
-      margin-bottom: 20px;
-      width: fit-content;
-    }
-
-    .footer-logo-mark .logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: 0.05em;
-    }
-
-    .footer-desc {
-      font-size: 0.85rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      max-width: 300px;
-    }
-
-    .footer-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-
-    .footer-tag {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 8px 15px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.7);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-size: 10px;
-      border-radius: 22px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 14px;
-    }
-
-    .social-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255, 255, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 1rem;
-      transition: all 0.2s;
-    }
-
-    .social-btn:hover {
-      border-color: var(--orange);
-      color: var(--orange);
-      transform: translateY(-2px);
-    }
-
-    footer h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.65);
-      font-size: 0.88rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .contact-icon {
-      font-size: 1.1rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .contact-info {
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .contact-info strong {
-      color: #fff;
-      font-weight: 600;
-      display: block;
-      font-size: 0.9rem;
-    }
-
-    .contact-info span {
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.78rem;
-    }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.4);
-    }
-
-    /* ── TREE SVG ANIMATION ── */
-    #tree-svg path,
-    #tree-svg ellipse,
-    #tree-svg circle {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-    }
-
-    .tree-animated #tree-svg path,
-    .tree-animated #tree-svg ellipse {
-      animation: draw-path 2.5s ease-out forwards;
-    }
-
-    @keyframes draw-path {
-      to {
-        stroke-dashoffset: 0;
+      /* Floating — starts after slide-in is done */
+      .journey-step.visible#step-1 .step-card {
+        animation: float-card 5s ease-in-out 0.7s infinite;
       }
-    }
-
-    .CBKIO {
-      font-size: 18px;
-      text-align: center;
-      padding-bottom: 45px;
-      color: #e87722;
-      font-weight: 900;
-    }
-
-    .social-links img {
-      width: 15px;
-    }
-
-    img.card1a {
-      width: 816px;
-      left: -270px;
-      position: relative;
-      top: -229px;
-    }
-
-    img.card2a {
-      width: 442px;
-      left: 37px;
-      position: relative;
-      top: -124px;
-    }
-
-    .card1.s {
-      position: relative;
-      left: -61px;
-      top: -76px;
-      width: 302px;
-    }
-    .treeimgsd{
-      width: 100%;
-    }
-
-    /* ══════════════════════════════════════
-       HAMBURGER MENU
-    ══════════════════════════════════════ */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 200;
-    }
-    .hamburger span {
-      display: block;
-      width: 26px;
-      height: 2.5px;
-      background: var(--navy);
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-
-    /* ══════════════════════════════════════
-       RESPONSIVE — TABLET (max 1024px)
-    ══════════════════════════════════════ */
-    @media (max-width: 1024px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding: 25px 5%;
-        gap: 0;
+      .journey-step.visible#step-2 .step-card {
+        animation: float-card 5s ease-in-out 1.4s infinite;
       }
-      .hero-right {
-        min-height: 420px;
+      .journey-step.visible#step-3 .step-card {
+        animation: float-card 5s ease-in-out 2.1s infinite;
       }
-      .hero-img-wrapper {
-        height: 420px;
+      .journey-step.visible#step-4 .step-card {
+        animation: float-card 5s ease-in-out 2.8s infinite;
       }
-      .bannerrightimag {
-        width: 340px !important;
+      .journey-step.visible#step-5 .step-card {
+        animation: float-card 5s ease-in-out 3.5s infinite;
       }
-      .rotating-globe {
-        width: 480px;
-        height: 480px;
-        top: -180px;
-        right: -140px;
-      }
-      .stat-card {
-        min-width: 150px;
-      }
-      .card-1 { top: -55px; right: 10px; }
-      .card-2 { top: 80px; right: -5px; }
-      .card-3 { bottom: 80px; right: 0px; }
 
-      /* Journey Sticky Scroll Overrides for Tablet and Mobile */
-      .journey-scroll-story {
-        height: auto !important;
+      /* Hover: pause float and lift */
+      .journey-step .step-card:hover {
+        animation-play-state: paused !important;
+        box-shadow: 0 18px 44px rgba(30, 50, 100, 0.15);
+        border-color: rgba(59, 111, 212, 0.3);
       }
-      .journey-sticky {
-        position: static !important;
-        height: auto !important;
-        overflow: visible !important;
-        background: transparent !important;
-        padding: 20px 0 40px;
-      }
-      .tree-layout {
-        height: auto;
-        max-height: none;
+
+      .step-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
         display: flex;
-        flex-direction: column;
-        gap: 24px;
-        position: relative;
-        padding-left: 32px; /* Space for the timeline line */
-        margin-top: 25px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
       }
-      /* Vertical Timeline Line */
-      .tree-layout::before {
-        content: '';
-        position: absolute;
-        left: 12px;
-        top: 10px;
-        bottom: 10px;
-        width: 3px;
-        background: linear-gradient(to bottom, var(--blue), var(--orange));
-        border-radius: 4px;
-        z-index: 1;
+
+      .step-tag {
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
       }
-      .tree-container {
-        display: none;
+
+      .step-title {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 4px;
       }
-      .journey-step {
-        position: relative !important;
-        width: 100% !important;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 2;
+
+      .step-desc {
+        font-size: 0.76rem;
+        color: var(--gray);
+        line-height: 1.45;
       }
-      #step-1, #step-2, #step-3, #step-4, #step-5 {
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
+
+      /* SVG Tree */
+      .tree-svg-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
       }
-      .journey-step.visible {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
+
+      #tree-svg {
+        width: 320px;
+        overflow: visible;
       }
-      .journey-step .step-card {
-        animation: none !important;
-        border-radius: 16px !important;
-        box-shadow: 0 4px 20px rgba(30, 50, 100, 0.05);
-        border: 1.5px solid rgba(59, 111, 212, 0.08);
+
+      /* ── WHY GERMANY ── */
+      .why-section {
+        background: var(--bg);
+        padding: 50px 0;
       }
-      
-      /* Bullets on timeline */
-      .journey-step::before {
-        content: '';
-        position: absolute;
-        left: -25px; /* center exactly on the vertical track line */
-        top: 24px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: var(--white);
-        border: 3px solid var(--blue);
-        z-index: 3;
-        box-shadow: 0 0 0 4px rgba(59, 111, 212, 0.15);
-      }
-      .journey-step:nth-of-type(even)::before {
-        border-color: var(--orange);
-        box-shadow: 0 0 0 4px rgba(232, 119, 34, 0.15);
+
+      .why-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
       }
 
       .germany-cards {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 30px;
       }
+
+      .germany-card {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 32px 24px;
+        border: 1.5px solid rgba(59, 111, 212, 0.1);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.5s;
+      }
+
+      .germany-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .germany-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 40px rgba(59, 111, 212, 0.1);
+      }
+
+      .g-icon {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .g-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+
+      .g-desc {
+        font-size: 0.83rem;
+        color: var(--gray);
+        line-height: 1.6;
+        margin-bottom: 14px;
+      }
+
+      .g-divider {
+        height: 1.5px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(59, 111, 212, 0.2),
+          transparent
+        );
+        margin-bottom: 12px;
+      }
+
+      .g-tag {
+        font-size: 0.78rem;
+        color: var(--blue);
+        font-weight: 600;
+      }
+
+      /* Window into Germany section */
+      .window-section-wrapper {
+        background: linear-gradient(135deg, #3b8cd4f0 0%, #0c2354 100%);
+        width: 100%;
+      }
+
+      .window-section {
+        padding: 60px 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
       .window-inner {
-        grid-template-columns: 1fr;
-      }
-      .window-right img {
-        width: 100% !important;
-      }
-      .footer-grid {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
+        align-items: center;
       }
-      .hero-wrapper {
-        padding: 40px 5%;
-      }
-      .hero-heading {
-        font-size: 42px;
-      }
-      .cards {
-        max-width: 95%;
-      }
-      img.card1a {
-        width: 600px;
-        left: -160px;
-        top: -160px;
-      }
-      img.card2a {
-        width: 340px;
-        left: 20px;
-        top: -90px;
-      }
-    }
 
-    /* ══════════════════════════════════════
-       RESPONSIVE — MOBILE (max 768px)
-    ══════════════════════════════════════ */
-    @media (max-width: 768px) {
-      /* Navbar */
-      .hamburger { display: flex; }
-      .nav-btn-desktop { display: none; }
-      .nav-links {
-        display: none;
-        position: fixed;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: #ffffff; /* Solid white background to block underlying content bleed-through */
-        flex-direction: column;
-        gap: 0;
-        padding: 16px 0 24px;
-        border-bottom: 1.5px solid rgba(59, 111, 212, 0.08);
-        z-index: 150;
-        box-shadow: 0 10px 30px rgba(26, 39, 68, 0.1);
-      }
-      .nav-links.open {
+      .window-text h2 {
+        font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 16px;
         display: flex;
+        align-items: center;
+        flex-wrap: wrap;
       }
-      .nav-links li {
-        border-bottom: 1px solid rgba(59, 111, 212, 0.06);
+
+      .window-text p.window-subtitle {
+        color: #edf5ff;
+        font-size: 1.05rem;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 24px;
       }
-      .nav-links a {
-        display: block;
-        padding: 14px 24px;
-        font-size: 1rem;
+
+      .window-info-box {
+        background: rgba(13, 31, 69, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        color: #fff;
+        border-radius: 28px;
+        padding: 40px;
+        margin-top: 25px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        z-index: 5;
       }
-      .nav-btn-mobile-wrapper {
-        display: block !important;
-        border-bottom: none !important;
-        padding: 20px 24px 8px;
-      }
-      .nav-links .btn-register-mobile {
-        display: block;
-        background: var(--navy);
-        color: #ffffff !important; /* Forces white text to override general link styles */
-        padding: 12px !important; /* Forces correct padding */
-        text-align: center;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        text-decoration: none;
-        transition: background 0.2s;
-      }
-      .nav-links .btn-register-mobile:hover {
-        background: var(--blue);
+
+      .window-info-box h3 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 10px;
         color: #ffffff !important;
       }
 
-      /* Hero */
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding: 20px 5% 0;
+      .window-info-box p.info-box-desc {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 24px;
       }
-      .hero-title { font-size: 28px !important; }
-      .hero-desc { font-size: 0.9rem; }
-      .hero-btns { flex-wrap: wrap; gap: 12px; }
-      .btn-primary, .btn-outline { width: 100%; text-align: center; }
-      .hero-right { min-height: 360px; }
-      .hero-img-wrapper { height: 360px; }
-      .bannerrightimag { width: 260px !important; }
-      .rotating-globe {
-        width: 340px;
-        height: 340px;
-        top: -120px;
-        right: -80px;
-      }
-      .stat-card {
-        min-width: 130px;
-        padding: 10px 14px;
-      }
-      .stat-card .stat-num { font-size: 1.3rem; }
-      .stat-card .stat-label { font-size: 0.65rem; }
-      .card-1 { top: -40px; right: 5px; }
-      .card-2 { top: 60px; right: -5px; }
-      .card-3 { bottom: 50px; right: 0; }
 
-      /* Section */
-      .section { padding: 35px 5%; }
-      .cards {
+      .window-features-new {
+        list-style: none;
+        display: flex;
         flex-direction: column;
-        max-width: 100%;
+        gap: 22px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .feature-item-new {
+        display: flex;
+        align-items: flex-start;
         gap: 16px;
       }
-      .card {
-        height: auto;
-        min-height: 260px;
-        flex: none;
-        width: 100%;
+
+      .feature-icon-new {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        color: #ffffff;
+        flex-shrink: 0;
+        margin-top: 2px;
       }
-      .cards:hover .card { flex-grow: 1; }
-      .cards .card:hover { flex-grow: 1; }
 
+      .feature-icon-new svg {
+        width: 20px;
+        height: 20px;
+        stroke: #ffffff;
+        fill: none;
+      }
 
-
-      /* Why Germany */
-      .why-section { padding: 35px 0; }
-      .germany-cards { grid-template-columns: 1fr; gap: 16px; }
-
-      /* Window section */
-      .window-section { padding: 30px 5%; }
-      .window-inner { grid-template-columns: 1fr; gap: 24px; }
-      .window-right img { width: 100% !important; }
-
-      /* Hero wrapper (footer CTA) */
-      .hero-wrapper {
+      .feature-content-new {
+        display: flex;
         flex-direction: column;
-        padding: 30px 5%;
-        gap: 20px;
+        gap: 3px;
       }
-      .hero-heading { font-size: 30px; }
-      .hero-right.kloiop { margin-top: 0; min-width: unset; width: 100%; }
-      .btn-row { flex-direction: column; gap: 10px; }
-      .btn-row .btn-primary, .btn-row .btn-secondary { width: 100%; }
 
-      /* Footer */
+      .feature-title-new {
+        font-size: 0.98rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .feature-desc-new {
+        font-size: 0.83rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.45;
+      }
+
+      .window-right {
+        position: relative;
+        z-index: 5;
+      }
+
+      .window-main-img {
+        width: 122%;
+        position: relative;
+        z-index: 2;
+        display: block;
+      }
+
+      .window-watermark {
+        position: absolute;
+        top: 10%;
+        right: 0;
+        font-family: "DM Sans", sans-serif;
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        font-weight: 800;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.04);
+        text-align: right;
+        letter-spacing: 4px;
+        z-index: 1;
+        pointer-events: none;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 1024px) {
+        .window-main-img {
+          width: 100% !important;
+          max-width: 480px;
+          margin: 0 auto;
+        }
+        .window-watermark {
+          display: none;
+        }
+      }
+
+      /* footertopsec .. */
+
+      .hero-wrapper {
+        border-radius: 20px;
+        padding: 0px 110px;
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* LEFT SIDE */
+      .hero-left {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .start-label {
+        display: inline-block;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #e07820;
+        border-bottom: 2px solid #e07820;
+        padding-bottom: 3px;
+        margin-bottom: 22px;
+      }
+
+      .hero-heading {
+        font-size: 58px;
+        font-weight: 800;
+        color: #0d1f45;
+        line-height: 1.15;
+        margin-bottom: 20px;
+      }
+
+      .hero-heading .highlight {
+        color: #e07820;
+      }
+
+      .hero-subtext {
+        font-size: 14.5px;
+        color: #5c6e8a;
+        line-height: 1.65;
+        max-width: 360px;
+      }
+
+      /* RIGHT SIDE */
+      .hero-right {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        min-width: 270px;
+        margin-top: 46px;
+      }
+      .kloiop {
+        margin-top: -60px;
+      }
+
+      .btn-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: #0d1f45;
+        color: #ffffff;
+        border: none;
+        border-radius: 9px;
+        padding: 13px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Manrope", sans-serif;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        white-space: nowrap;
+      }
+
+      .btn-primary:hover {
+        background: #162d5e;
+        transform: translateY(-1px);
+      }
+
+      .btn-primary:active {
+        transform: scale(0.98);
+      }
+
+      .btn-secondary {
+        background: #ffffff;
+        color: #0d1f45;
+        border: 1.5px solid #0d1f45;
+        border-radius: 9px;
+        padding: 13px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Manrope", sans-serif;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        white-space: nowrap;
+      }
+
+      .btn-secondary:hover {
+        background: #f0f4ff;
+        transform: translateY(-1px);
+      }
+
+      .btn-secondary:active {
+        transform: scale(0.98);
+      }
+
+      /* Feature list */
+      .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a2d4e;
+      }
+
+      .check-circle {
+        width: 22px;
+        height: 22px;
+        border: 2px solid #1a6bbf;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .check-circle svg {
+        width: 12px;
+        height: 12px;
+      }
+
+      /* Responsive */
+      @media (max-width: 720px) {
+        .hero-wrapper {
+          flex-direction: column;
+          padding: 40px 28px;
+          gap: 32px;
+        }
+
+        .hero-heading {
+          font-size: 30px;
+        }
+
+        .hero-right {
+          min-width: unset;
+          width: 100%;
+        }
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background-image: url("./myimages/FOOTER\ bg.png");
+        padding: 70px 5% 30px;
+        color: rgba(255, 255, 255, 0.75);
+        background-size: cover;
+      }
+
       .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr;
+        gap: 60px;
+        margin-bottom: 50px;
       }
 
-      /* Cards section images */
+      .footer-logo {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-mark {
+        margin-bottom: 20px;
+        width: fit-content;
+      }
+
+      .footer-logo-mark .logo-text {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: 0.05em;
+      }
+
+      .footer-desc {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        max-width: 300px;
+      }
+
+      .footer-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .footer-tag {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 8px 15px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 10px;
+        border-radius: 22px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 14px;
+      }
+
+      .social-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1rem;
+        transition: all 0.2s;
+      }
+
+      .social-btn:hover {
+        border-color: var(--orange);
+        color: var(--orange);
+        transform: translateY(-2px);
+      }
+
+      footer h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.88rem;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: #fff;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .contact-icon {
+        font-size: 1.1rem;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+
+      .contact-info {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+
+      .contact-info strong {
+        color: #fff;
+        font-weight: 600;
+        display: block;
+        font-size: 0.9rem;
+      }
+
+      .contact-info span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.78rem;
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      /* ── TREE SVG ANIMATION ── */
+      #tree-svg path,
+      #tree-svg ellipse,
+      #tree-svg circle {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+      }
+
+      .tree-animated #tree-svg path,
+      .tree-animated #tree-svg ellipse {
+        animation: draw-path 2.5s ease-out forwards;
+      }
+
+      @keyframes draw-path {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      .CBKIO {
+        font-size: 18px;
+        text-align: center;
+        padding-bottom: 45px;
+        color: #e87722;
+        font-weight: 900;
+      }
+
+      .social-links img {
+        width: 15px;
+      }
+
       img.card1a {
-        width: 100%;
-        left: 0;
-        top: 0;
-        position: static;
+        width: 816px;
+        left: -270px;
+        position: relative;
+        top: -229px;
       }
+
       img.card2a {
-        width: 100%;
-        left: 0;
-        top: 0;
-        position: static;
+        width: 442px;
+        left: 37px;
+        position: relative;
+        top: -124px;
       }
 
-      /* Headings */
-      .heading h1 { font-size: 28px; }
-      .section-title { font-size: 1.5rem; }
-      .journey-title { font-size: 1.6rem; }
-    }
+      .card1.s {
+        position: relative;
+        left: -61px;
+        top: -76px;
+        width: 302px;
+      }
+      .treeimgsd {
+        width: 100%;
+      }
 
-    /* ══════════════════════════════════════
+      /* ══════════════════════════════════════
+       HAMBURGER MENU
+    ══════════════════════════════════════ */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        z-index: 200;
+      }
+      .hamburger span {
+        display: block;
+        width: 26px;
+        height: 2.5px;
+        background: var(--navy);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+      }
+
+      /* ══════════════════════════════════════
+       RESPONSIVE — TABLET (max 1024px)
+    ══════════════════════════════════════ */
+      @media (max-width: 1024px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          padding: 25px 5%;
+          gap: 0;
+        }
+        .hero-right {
+          min-height: 420px;
+        }
+        .hero-img-wrapper {
+          height: 420px;
+        }
+        .bannerrightimag {
+          width: 340px !important;
+        }
+        .rotating-globe {
+          width: 480px;
+          height: 480px;
+          top: -180px;
+          right: -140px;
+        }
+        .stat-card {
+          min-width: 150px;
+        }
+        .card-1 {
+          top: -55px;
+          right: 10px;
+        }
+        .card-2 {
+          top: 80px;
+          right: -5px;
+        }
+        .card-3 {
+          bottom: 80px;
+          right: 0px;
+        }
+
+        /* Journey Sticky Scroll Overrides for Tablet and Mobile */
+        .journey-scroll-story {
+          height: auto !important;
+        }
+        .journey-sticky {
+          position: static !important;
+          height: auto !important;
+          overflow: visible !important;
+          background: transparent !important;
+          padding: 20px 0 40px;
+        }
+        .tree-layout {
+          height: auto;
+          max-height: none;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          position: relative;
+          padding-left: 32px; /* Space for the timeline line */
+          margin-top: 25px;
+        }
+        /* Vertical Timeline Line */
+        .tree-layout::before {
+          content: "";
+          position: absolute;
+          left: 12px;
+          top: 10px;
+          bottom: 10px;
+          width: 3px;
+          background: linear-gradient(to bottom, var(--blue), var(--orange));
+          border-radius: 4px;
+          z-index: 1;
+        }
+        .tree-container {
+          display: none;
+        }
+        .journey-step {
+          position: relative !important;
+          width: 100% !important;
+          opacity: 0;
+          transform: translateY(20px);
+          transition:
+            opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          z-index: 2;
+        }
+        #step-1,
+        #step-2,
+        #step-3,
+        #step-4,
+        #step-5 {
+          top: auto !important;
+          left: auto !important;
+          right: auto !important;
+        }
+        .journey-step.visible {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+        .journey-step .step-card {
+          animation: none !important;
+          border-radius: 16px !important;
+          box-shadow: 0 4px 20px rgba(30, 50, 100, 0.05);
+          border: 1.5px solid rgba(59, 111, 212, 0.08);
+        }
+
+        /* Bullets on timeline */
+        .journey-step::before {
+          content: "";
+          position: absolute;
+          left: -25px; /* center exactly on the vertical track line */
+          top: 24px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: var(--white);
+          border: 3px solid var(--blue);
+          z-index: 3;
+          box-shadow: 0 0 0 4px rgba(59, 111, 212, 0.15);
+        }
+        .journey-step:nth-of-type(even)::before {
+          border-color: var(--orange);
+          box-shadow: 0 0 0 4px rgba(232, 119, 34, 0.15);
+        }
+
+        .germany-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .window-inner {
+          grid-template-columns: 1fr;
+        }
+        .window-right img {
+          width: 100% !important;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+        .hero-wrapper {
+          padding: 40px 5%;
+        }
+        .hero-heading {
+          font-size: 42px;
+        }
+        .cards {
+          max-width: 95%;
+        }
+        img.card1a {
+          width: 600px;
+          left: -160px;
+          top: -160px;
+        }
+        img.card2a {
+          width: 340px;
+          left: 20px;
+          top: -90px;
+        }
+      }
+
+      /* ══════════════════════════════════════
+       RESPONSIVE — MOBILE (max 768px)
+    ══════════════════════════════════════ */
+      @media (max-width: 768px) {
+        /* Navbar */
+        .hamburger {
+          display: flex;
+        }
+        .nav-btn-desktop {
+          display: none;
+        }
+        .nav-links {
+          display: none;
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          background: #ffffff; /* Solid white background to block underlying content bleed-through */
+          flex-direction: column;
+          gap: 0;
+          padding: 16px 0 24px;
+          border-bottom: 1.5px solid rgba(59, 111, 212, 0.08);
+          z-index: 150;
+          box-shadow: 0 10px 30px rgba(26, 39, 68, 0.1);
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .nav-links li {
+          border-bottom: 1px solid rgba(59, 111, 212, 0.06);
+        }
+        .nav-links a {
+          display: block;
+          padding: 14px 24px;
+          font-size: 1rem;
+        }
+        .nav-btn-mobile-wrapper {
+          display: block !important;
+          border-bottom: none !important;
+          padding: 20px 24px 8px;
+        }
+        .nav-links .btn-register-mobile {
+          display: block;
+          background: var(--navy);
+          color: #ffffff !important; /* Forces white text to override general link styles */
+          padding: 12px !important; /* Forces correct padding */
+          text-align: center;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          text-decoration: none;
+          transition: background 0.2s;
+        }
+        .nav-links .btn-register-mobile:hover {
+          background: var(--blue);
+          color: #ffffff !important;
+        }
+
+        /* Hero */
+        .hero-inner {
+          grid-template-columns: 1fr;
+          padding: 20px 5% 0;
+        }
+        .hero-title {
+          font-size: 28px !important;
+        }
+        .hero-desc {
+          font-size: 0.9rem;
+        }
+        .hero-btns {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .btn-primary,
+        .btn-outline {
+          width: 100%;
+          text-align: center;
+        }
+        .hero-right {
+          min-height: 360px;
+        }
+        .hero-img-wrapper {
+          height: 360px;
+        }
+        .bannerrightimag {
+          width: 260px !important;
+        }
+        .rotating-globe {
+          width: 340px;
+          height: 340px;
+          top: -120px;
+          right: -80px;
+        }
+        .stat-card {
+          min-width: 130px;
+          padding: 10px 14px;
+        }
+        .stat-card .stat-num {
+          font-size: 1.3rem;
+        }
+        .stat-card .stat-label {
+          font-size: 0.65rem;
+        }
+        .card-1 {
+          top: -40px;
+          right: 5px;
+        }
+        .card-2 {
+          top: 60px;
+          right: -5px;
+        }
+        .card-3 {
+          bottom: 50px;
+          right: 0;
+        }
+
+        /* Section */
+        .section {
+          padding: 35px 5%;
+        }
+        .cards {
+          flex-direction: column;
+          max-width: 100%;
+          gap: 16px;
+        }
+        .card {
+          height: auto;
+          min-height: 260px;
+          flex: none;
+          width: 100%;
+        }
+        .cards:hover .card {
+          flex-grow: 1;
+        }
+        .cards .card:hover {
+          flex-grow: 1;
+        }
+
+        /* Why Germany */
+        .why-section {
+          padding: 35px 0;
+        }
+        .germany-cards {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        /* Window section */
+        .window-section {
+          padding: 30px 5%;
+        }
+        .window-inner {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .window-right img {
+          width: 100% !important;
+        }
+
+        /* Hero wrapper (footer CTA) */
+        .hero-wrapper {
+          flex-direction: column;
+          padding: 30px 5%;
+          gap: 20px;
+        }
+        .hero-heading {
+          font-size: 30px;
+        }
+        .hero-right.kloiop {
+          margin-top: 0;
+          min-width: unset;
+          width: 100%;
+        }
+        .btn-row {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .btn-row .btn-primary,
+        .btn-row .btn-secondary {
+          width: 100%;
+        }
+
+        /* Footer */
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+
+        /* Cards section images */
+        img.card1a {
+          width: 100%;
+          left: 0;
+          top: 0;
+          position: static;
+        }
+        img.card2a {
+          width: 100%;
+          left: 0;
+          top: 0;
+          position: static;
+        }
+
+        /* Headings */
+        .heading h1 {
+          font-size: 28px;
+        }
+        .section-title {
+          font-size: 1.6rem;
+        }
+        .journey-title {
+          font-size: 1.6rem;
+        }
+      }
+
+      /* ══════════════════════════════════════
        RESPONSIVE — SMALL MOBILE (max 480px)
     ══════════════════════════════════════ */
-    @media (max-width: 480px) {
-      nav { padding: 0 4%; }
-      .hero-title { font-size: 24px !important; }
-      .hero-badge { font-size: 0.72rem; padding: 4px 12px; }
-      .bannerrightimag { width: 220px !important; }
-      .rotating-globe {
-        width: 260px;
-        height: 260px;
-        top: -80px;
-        right: 10px;
+      @media (max-width: 480px) {
+        nav {
+          padding: 0 4%;
+        }
+        .hero-title {
+          font-size: 24px !important;
+        }
+        .hero-badge {
+          font-size: 0.72rem;
+          padding: 4px 12px;
+        }
+        .bannerrightimag {
+          width: 220px !important;
+        }
+        .rotating-globe {
+          width: 260px;
+          height: 260px;
+          top: -80px;
+          right: 10px;
+        }
+        .hero-bg-circle {
+          display: none;
+        }
+        .card-1,
+        .card-2,
+        .card-3 {
+          display: none;
+        }
+        .hero-img-wrapper {
+          height: 300px;
+        }
+        .hero-right {
+          min-height: 300px;
+        }
+        .hero-heading {
+          font-size: 26px;
+        }
+        .window-info-box {
+          padding: 20px;
+        }
       }
-      .hero-bg-circle {
-        display: none;
+      /* ── FLIGHT PATH & AIRPLANE ── */
+      .flight-path-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2; /* Runs behind the main website content */
+        pointer-events: none;
+        overflow: hidden;
       }
-      .card-1, .card-2, .card-3 { display: none; }
-      .hero-img-wrapper { height: 300px; }
-      .hero-right { min-height: 300px; }
-      .hero-heading { font-size: 26px; }
-      .window-info-box { padding: 20px; }
-    }
-    /* ── FLIGHT PATH & AIRPLANE ── */
-    .flight-path-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2; /* Runs behind the main website content */
-      pointer-events: none;
-      overflow: hidden;
-    }
-    
-    .flight-path-svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-    
-    .flight-path-line {
-      fill: none;
-      stroke: var(--orange); /* Muted/faint orange color */
-      stroke-width: 2.5;
-      stroke-dasharray: 10, 10;
-      stroke-linecap: round;
-      opacity: 0.15; /* Subtle opacity so it looks like it's running behind */
-    }
-    
-    .airplane-pointer {
-      position: absolute;
-      width: 38px;
-      height: 38px;
-      z-index: 90; /* Floats above content, but stays behind the sticky navbar (z-index 100) */
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      will-change: left, top, transform;
-      transition: transform 0.1s ease-out, opacity 0.3s ease;
-    }
-    
-    .airplane-pointer svg {
-      width: 100%;
-      height: 100%;
-      filter: drop-shadow(0 3px 6px rgba(232, 119, 34, 0.3));
-    }
-    
-    /* Takeoff animation when scrolling near the bottom */
-    .airplane-pointer.take-off {
-      transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-out;
-      transform: translate(400px, -400px) rotate(-35deg) scale(0.5) !important;
-      opacity: 0;
-    }
-  </style>
-</head>
 
-<body>
+      .flight-path-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
 
-  <!-- ── FLIGHT PATH & AIRPLANE POINTER ── -->
-  <!-- Flight path container stays in the background (z-index: 2) -->
-  <div class="flight-path-container">
-    <svg class="flight-path-svg" viewBox="0 0 1000 5000" preserveAspectRatio="none">
-      <!-- Path starts at y = 150 to sit below the 72px sticky navbar on initial page load, and descends faster in the first two sections to keep the airplane visible in the viewport -->
-      <path id="flight-path" class="flight-path-line" d="M 850,150 C 720,280 200,220 150,650 C 100,900 900,1000 850,1350 C 800,1650 100,1550 120,1850 C 150,2350 950,2250 900,2750 C 850,3250 80,3150 100,3650 C 120,4150 920,4050 880,4550 C 850,4900 650,4920 600,4950" />
-    </svg>
-  </div>
+      .flight-path-line {
+        fill: none;
+        stroke: var(--orange); /* Muted/faint orange color */
+        stroke-width: 2.5;
+        stroke-dasharray: 10, 10;
+        stroke-linecap: round;
+        opacity: 0.15; /* Subtle opacity so it looks like it's running behind */
+      }
 
-  <!-- Airplane pointer floats on top (z-index: 90) -->
-  <div id="airplane-pointer" class="airplane-pointer">
-    <svg viewBox="0 0 24 24" fill="var(--orange)" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l7 2.5z"/>
-    </svg>
-  </div>
+      .airplane-pointer {
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        z-index: 90; /* Floats above content, but stays behind the sticky navbar (z-index 100) */
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        will-change: left, top, transform;
+        transition:
+          transform 0.1s ease-out,
+          opacity 0.3s ease;
+      }
 
-  <!-- ── NAVBAR ── -->
-  <nav>
-    <div class="logo">
-      <img src="./myimages/0 1.png" alt="">
+      .airplane-pointer svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 3px 6px rgba(232, 119, 34, 0.3));
+      }
+
+      /* Takeoff animation when scrolling near the bottom */
+      .airplane-pointer.take-off {
+        transition:
+          transform 1.5s cubic-bezier(0.25, 1, 0.5, 1),
+          opacity 1.2s ease-out;
+        transform: translate(400px, -400px) rotate(-35deg) scale(0.5) !important;
+        opacity: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ── FLIGHT PATH & AIRPLANE POINTER ── -->
+    <!-- Flight path container stays in the background (z-index: 2) -->
+    <div class="flight-path-container">
+      <svg
+        class="flight-path-svg"
+        viewBox="0 0 1000 5000"
+        preserveAspectRatio="none"
+      >
+        <!-- Path starts at y = 150 to sit below the 72px sticky navbar on initial page load, and descends faster in the first two sections to keep the airplane visible in the viewport -->
+        <path
+          id="flight-path"
+          class="flight-path-line"
+          d="M 850,150 C 720,280 200,220 150,650 C 100,900 900,1000 850,1350 C 800,1650 100,1550 120,1850 C 150,2350 950,2250 900,2750 C 850,3250 80,3150 100,3650 C 120,4150 920,4050 880,4550 C 850,4900 650,4920 600,4950"
+        />
+      </svg>
     </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#">Global Pathways</a></li>
-      <li><a href="#">Talent Network</a></li>
-      <li><a href="#">Career Mobility</a></li>
-      <li><a href="#">Inside Stanora</a></li>
-      <li class="nav-btn-mobile-wrapper"><a href="#" class="btn-register-mobile">Register Now</a></li>
-    </ul>
-    <a href="#" class="btn-register nav-btn-desktop">Register Now</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
 
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="hero-bg-circle"></div>
-    <!-- Dashed diagonal lines -->
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-badge">Building Global Careers, Responsibly</div>
-        <h1 class="hero-title">
-          Building Trusted
-          Pathways for <span class="orange">Talented</span><br>
-          <span class="orange">Skilled</span> Professionals
-        </h1>
-        <p class="hero-desc">Stanora is a workforce mobility venture focused on enabling skilled professionals,
-          particularly nurses, to build structured and transparent careers in Germany.</p>
-        <div class="hero-btns">
-          <a href="#" class="btn-primary">Register Now</a>
-          <a href="#" class="btn-outline">Learn More</a>
-        </div>
-        <div class="hero-features">
-          <div class="feat-item"><span class="feat-icon"><img src="./myimages/check_ring_round.png" alt=""></span>
-            Germany-Focused Opportunities</div>
-          <div class="feat-item"><span class="feat-icon"><img src="./myimages/check_ring_round.png" alt=""></span>
-            Structured Migration Process</div>
-          <div class="feat-item"><span class="feat-icon"><img src="./myimages/check_ring_round.png" alt=""></span>
-            Long-Term Career Growth</div>
-        </div>
+    <!-- Airplane pointer floats on top (z-index: 90) -->
+    <div id="airplane-pointer" class="airplane-pointer">
+      <svg
+        viewBox="0 0 24 24"
+        fill="var(--orange)"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l7 2.5z"
+        />
+      </svg>
+    </div>
+
+    <!-- ── NAVBAR ── -->
+    <nav>
+      <div class="logo">
+        <img src="./myimages/0 1.png" alt="" />
       </div>
-      <!-- 
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about-stanora">About Stanora</a></li>
+        <li><a href="#journey">Your Journey</a></li>
+        <li><a href="#why-germany">Why Germany</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li class="nav-btn-mobile-wrapper">
+          <a href="#" class="btn-register-mobile">Register Now</a>
+        </li>
+      </ul>
+      <a href="#" class="btn-register nav-btn-desktop">Register Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="hero-bg-circle"></div>
+      <!-- Dashed diagonal lines -->
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-badge">Building Global Careers, Responsibly</div>
+          <h1 class="hero-title">
+            Building Trusted Pathways for <span class="orange">Talented</span
+            ><br />
+            <span class="orange">Skilled</span> Professionals
+          </h1>
+          <p class="hero-desc">
+            Stanora is a workforce mobility venture focused on enabling skilled
+            professionals, particularly nurses, to build structured and
+            transparent careers in Germany.
+          </p>
+          <div class="hero-btns">
+            <a href="#" class="btn-primary">Register Now</a>
+            <a href="#" class="btn-outline">Learn More</a>
+          </div>
+          <div class="hero-features">
+            <div class="feat-item">
+              <span class="feat-icon"
+                ><img src="./myimages/check_ring_round.png" alt=""
+              /></span>
+              Germany-Focused Opportunities
+            </div>
+            <div class="feat-item">
+              <span class="feat-icon"
+                ><img src="./myimages/check_ring_round.png" alt=""
+              /></span>
+              Structured Migration Process
+            </div>
+            <div class="feat-item">
+              <span class="feat-icon"
+                ><img src="./myimages/check_ring_round.png" alt=""
+              /></span>
+              Long-Term Career Growth
+            </div>
+          </div>
+        </div>
+        <!-- 
     <div class="hero-right">
       <div class="hero-img-wrapper">
         <div class="hero-img-placeholder"> -->
-      <!-- Dummy person silhouette -->
-      <!-- <img src="./myimages/Mask group.png" alt="" class="bannerrightimag">
+        <!-- Dummy person silhouette -->
+        <!-- <img src="./myimages/Mask group.png" alt="" class="bannerrightimag">
         </div> -->
 
-      <!-- Stat cards -->
-      <!-- <div class="stat-card card-1">
+        <!-- Stat cards -->
+        <!-- <div class="stat-card card-1">
           <div class="stat-label">👥 Workforce Shortage</div>
           <div class="stat-num"><span class="countup" data-target="500000">0</span>+</div>
           <div class="stat-sub">Nurse Demand in Germany by 2030</div>
@@ -1822,737 +2083,1102 @@
           <div class="stat-sub">Nationalities Living & Working in Germany</div>
         </div>
       </div> -->
-      <!-- </div> -->
-      <div class="hero-right">
-        <div class="hero-img-wrapper">
+        <!-- </div> -->
+        <div class="hero-right">
+          <div class="hero-img-wrapper">
+            <!-- Rotating Globe -->
+            <div class="rotating-globe"></div>
 
-          <!-- Rotating Globe -->
-          <div class="rotating-globe"></div>
-
-          <!-- Nurse Image -->
-          <div class="hero-img-placeholder">
-            <img src="./myimages/Mask group.png" alt="" class="bannerrightimag">
-          </div>
-
-          <!-- Stat cards -->
-          <div class="stat-card card-1">
-            <div class="stat-label"><img src="./myimages/Frame (1).png" alt=""> Workforce Shortage</div>
-            <div class="stat-num">
-              <span class="countup" data-target="500000">0</span>+
+            <!-- Nurse Image -->
+            <div class="hero-img-placeholder">
+              <img
+                src="./myimages/Mask group.png"
+                alt=""
+                class="bannerrightimag"
+              />
             </div>
-            <div class="stat-sub">Nurse Demand in Germany by 2030</div>
-          </div>
 
-          <div class="stat-card card-2">
-            <div class="stat-label"><img src="./myimages/Frame (2).png" alt=""> Global Career Pathways</div>
-            <div class="stat-num">
-              <span class="countup" data-target="25000">0</span>K+
+            <!-- Stat cards -->
+            <div class="stat-card card-1">
+              <div class="stat-label">
+                <img src="./myimages/Frame (1).png" alt="" /> Workforce Shortage
+              </div>
+              <div class="stat-num">
+                <span class="countup" data-target="500000">0</span>+
+              </div>
+              <div class="stat-sub">Nurse Demand in Germany by 2030</div>
             </div>
-            <div class="stat-sub">Healthcare Professionals Guided</div>
-          </div>
 
-          <div class="stat-card card-3">
-            <div class="stat-label"><img src="./myimages/Frame (3).png" alt=""> Global Workforce</div>
-            <div class="stat-num">
-              <span class="countup" data-target="150">0</span>+
+            <div class="stat-card card-2">
+              <div class="stat-label">
+                <img src="./myimages/Frame (2).png" alt="" /> Global Career
+                Pathways
+              </div>
+              <div class="stat-num">
+                <span class="countup" data-target="25000">0</span>K+
+              </div>
+              <div class="stat-sub">Healthcare Professionals Guided</div>
             </div>
-            <div class="stat-sub">
-              Nationalities Living & Working in Germany
-            </div>
-          </div>
 
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── WHAT WE DO ── -->
-  <div style="background: var(--bg);">
-    <div class="section">
-      <div class="journey-header">
-        <span class="journey-tag">ABOUT STANORA</span>
-        <div class="section-tag">What We Do</div>
-        <h2 class="journey-title">Structured Global Career Guidance by Stanora</h2>
-        <p class="journey-desc">Stanora helps qualified professionals build transparent, structured, and long-term
-          careers in Germany through ethical recruitment, responsible guidance, and complete end-to-end support.</p>
-      </div>
-      <div class="cards">
-
-        <!-- CARD 1 -->
-        <article class="card blue">
-          <div class="compact">
-            <div class="icon">
-              <img src="./myimages/Compass_fill.png" alt="">
-            </div>
-            <div class="num">01</div>
-            <h3 class="title">Clarity in Process</h3>
-            <p class="desc">We simplify every stage with transparent guidance, structured support, and a journey you can
-              clearly understand.</p>
-          </div>
-          <img src="./myimages/bottom1.png" alt="" class="card1">
-
-          <div class="expanded">
-            <div class="left-top">
-              <div class="icon">
-                <img src="./myimages/Compass_fill.png" alt="">
+            <div class="stat-card card-3">
+              <div class="stat-label">
+                <img src="./myimages/Frame (3).png" alt="" /> Global Workforce
+              </div>
+              <div class="stat-num">
+                <span class="countup" data-target="150">0</span>+
+              </div>
+              <div class="stat-sub">
+                Nationalities Living & Working in Germany
               </div>
             </div>
-            <div class="right-top">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT WE DO ── -->
+    <div id="about-stanora" style="background: var(--bg)">
+      <div class="section">
+        <div class="journey-header">
+          <span class="journey-tag">About Stanora</span>
+          <div class="section-tag">What We Do</div>
+          <h2 class="journey-title">
+            Structured Global Career Guidance by Stanora
+          </h2>
+          <p class="journey-desc">
+            Stanora helps qualified professionals build transparent, structured,
+            and long-term careers in Germany through ethical recruitment,
+            responsible guidance, and complete end-to-end support.
+          </p>
+        </div>
+        <div class="cards">
+          <!-- CARD 1 -->
+          <article class="card blue">
+            <div class="compact">
+              <div class="icon">
+                <img src="./myimages/Compass_fill.png" alt="" />
+              </div>
               <div class="num">01</div>
               <h3 class="title">Clarity in Process</h3>
-              <p class="desc">We simplify every stage with transparent guidance, structured support, and a journey you
-                can clearly understand.</p>
+              <p class="desc">
+                We simplify every stage with transparent guidance, structured
+                support, and a journey you can clearly understand.
+              </p>
             </div>
-            <ul class="checklist">
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>End-to-end guidance</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Clear communication</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Step-by-step support</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>No hidden confusion</li>
-            </ul>
-          </div>
-          <img src="./myimages/ABOUTSECTION_CARD 1_EXTENDED.png" alt="" class="card1a">
-        </article>
+            <img src="./myimages/bottom1.png" alt="" class="card1" />
 
-        <!-- CARD 2 -->
-        <article class="card orange">
-          <div class="compact">
-            <div class="icon">
-              <img src="./myimages/plant 1.png" alt="">
-            </div>
-            <div class="num">02</div>
-            <h3 class="title">Long-Term Growth</h3>
-            <p class="desc">We focus on building futures, not just completing processes. Your journey should continue
-              growing long after arrival.</p>
-          </div>
-          <img src="./myimages/bottom1.png" alt="" class="card1">
-
-          <div class="expanded">
-            <div class="left-top">
-              <div class="icon">
-                <img src="./myimages/plant 1.png" alt="">
-
+            <div class="expanded">
+              <div class="left-top">
+                <div class="icon">
+                  <img src="./myimages/Compass_fill.png" alt="" />
+                </div>
               </div>
+              <div class="right-top">
+                <div class="num">01</div>
+                <h3 class="title">Clarity in Process</h3>
+                <p class="desc">
+                  We simplify every stage with transparent guidance, structured
+                  support, and a journey you can clearly understand.
+                </p>
+              </div>
+              <ul class="checklist">
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >End-to-end guidance
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Clear communication
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Step-by-step support
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >No hidden confusion
+                </li>
+              </ul>
             </div>
-            <div class="right-top">
+            <img
+              src="./myimages/ABOUTSECTION_CARD 1_EXTENDED.png"
+              alt=""
+              class="card1a"
+            />
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="card orange">
+            <div class="compact">
+              <div class="icon">
+                <img src="./myimages/plant 1.png" alt="" />
+              </div>
               <div class="num">02</div>
               <h3 class="title">Long-Term Growth</h3>
-              <p class="desc">We focus on building futures, not just completing processes. Your journey should continue
-                growing long after arrival.</p>
+              <p class="desc">
+                We focus on building futures, not just completing processes.
+                Your journey should continue growing long after arrival.
+              </p>
             </div>
-            <ul class="checklist">
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Sustainable careers</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Continuous mentoring</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Lasting partnerships</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Future-focused planning</li>
-            </ul>
-          </div>
-          <img src="./myimages/ABOUTSECTION_CARD 2_EXTENDED.png" alt="" class="card2a">
-        </article>
+            <img src="./myimages/bottom1.png" alt="" class="card1" />
 
-        <!-- CARD 3 -->
-        <article class="card indigo">
-          <div class="compact">
-            <div class="icon">
-              <img src="./myimages/Frame (4).png" alt="">
-            </div>
-            <div class="num">03</div>
-            <h3 class="title">Fairness in Practice</h3>
-            <p class="desc">We believe opportunities should be built on honesty, equal guidance, and a people-first
-              approach.</p>
-          </div>
-          <img src="./myimages/ABOUTSECTION_CARD 3_EXTENDED (1).png" alt="" class="card1 s">
-
-          <div class="expanded">
-            <div class="left-top">
-              <div class="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z" />
-                  <polyline points="9 12 11 14 15 10" />
-                </svg>
+            <div class="expanded">
+              <div class="left-top">
+                <div class="icon">
+                  <img src="./myimages/plant 1.png" alt="" />
+                </div>
               </div>
+              <div class="right-top">
+                <div class="num">02</div>
+                <h3 class="title">Long-Term Growth</h3>
+                <p class="desc">
+                  We focus on building futures, not just completing processes.
+                  Your journey should continue growing long after arrival.
+                </p>
+              </div>
+              <ul class="checklist">
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Sustainable careers
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Continuous mentoring
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Lasting partnerships
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Future-focused planning
+                </li>
+              </ul>
             </div>
-            <div class="right-top">
+            <img
+              src="./myimages/ABOUTSECTION_CARD 2_EXTENDED.png"
+              alt=""
+              class="card2a"
+            />
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="card indigo">
+            <div class="compact">
+              <div class="icon">
+                <img src="./myimages/Frame (4).png" alt="" />
+              </div>
               <div class="num">03</div>
               <h3 class="title">Fairness in Practice</h3>
-              <p class="desc">We believe opportunities should be built on honesty, equal guidance, and a people-first
-                approach.</p>
+              <p class="desc">
+                We believe opportunities should be built on honesty, equal
+                guidance, and a people-first approach.
+              </p>
             </div>
-            <ul class="checklist">
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Ethical support</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Transparent practices</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Equal opportunities</li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg></span>Human-centered guidance</li>
-            </ul>
-          </div>
-          <img src="./myimages/ABOUTSECTION_CARD 3_EXTENDED (1).png" alt="" class="card2a">
-        </article>
+            <img
+              src="./myimages/ABOUTSECTION_CARD 3_EXTENDED (1).png"
+              alt=""
+              class="card1 s"
+            />
 
-      </div>
-    </div>
-  </div>
-
-  <!-- ── YOUR JOURNEY ── -->
-  <section class="journey-section">
-    <!-- Heading stays above the scroll story -->
-    <div class="journey-inner">
-      <div class="journey-header">
-        <span class="journey-tag">YOUR JOURNEY</span>
-        <h2 class="journey-title">From Roots in India, Growing Towards Germany.</h2>
-        <p class="journey-desc">Every meaningful journey begins with a single step.<br>Stanora guides you through every
-          stage — from preparation and guidance to building a future in Germany.</p>
-      </div>
-    </div>
-
-    <!-- Scroll story: tall wrapper so user scrolls THROUGH this section -->
-    <div class="journey-scroll-story">
-      <div class="journey-sticky">
-        <div class="journey-inner">
-          <div class="tree-layout">
-            <!-- Growing Tree -->
-            <div class="tree-container">
-              <img src="./myimages/tree.png" alt="Growing Tree" class="tree-image">
-            </div>
-
-            <!-- Step cards (absolutely positioned at branch heights) -->
-            <div class="journey-step from-right" id="step-1">
-              <div class="step-card">
-                <div class="step-icon" style="background:rgba(59,111,212,0.1)">🔵</div>
-                <div class="step-tag">01 — Begin Your Journey</div>
-                <div class="step-title">A dream takes root.</div>
-                <div class="step-desc">Create your profile and discover pathways aligned with your goals, aspirations, and
-                  future career opportunities in Germany.</div>
-              </div>
-            </div>
-
-            <div class="journey-step from-left" id="step-2">
-              <div class="step-card">
-                <div class="step-icon" style="background:rgba(59,111,212,0.1)">📖</div>
-                <div class="step-tag">02 — Learn &amp; Prepare</div>
-                <div class="step-title">Preparing for What's Next</div>
-                <div class="step-desc">Build confidence through language training, skill development, and guidance
-                  designed for your journey ahead.</div>
-              </div>
-            </div>
-
-            <div class="journey-step from-right" id="step-3">
-              <div class="step-card">
-                <div class="step-icon" style="background:rgba(59,111,212,0.1)">📋</div>
-                <div class="step-tag">03 — Documentation &amp; Visa</div>
-                <div class="step-title">Clarity at Every Step</div>
-                <div class="step-desc">Navigate every process with structured support, transparent guidance, and
-                  step-by-step assistance.</div>
-              </div>
-            </div>
-
-            <div class="journey-step from-left" id="step-4">
-              <div class="step-card">
-                <div class="step-icon" style="background:rgba(232,119,34,0.1)">〰</div>
-                <div class="step-tag">04 — Transition with Confidence</div>
-                <div class="step-title">Crossing New Paths</div>
-                <div class="step-desc">Move beyond preparation and step into a new chapter shaped by guidance,
-                  opportunity, and global experiences.</div>
-              </div>
-            </div>
-
-            <div class="journey-step from-right" id="step-5">
-              <div class="step-card" style="border-color: rgba(232,119,34,0.3);">
-                <div class="step-icon" style="background:rgba(232,119,34,0.1)">🌐</div>
-                <div class="step-tag" style="color:var(--orange)">05 — Grow in Germany</div>
-                <div class="step-title">Where New Futures Begin</div>
-                <div class="step-desc">Step into opportunities that open pathways toward long-term growth, global
-                  exposure, and a better tomorrow.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ── WHY GERMANY ── -->
-  <section class="why-section">
-    <div class="why-inner">
-      <div class="section-tag" style="text-align:left;text-align:center">Why Germany</div>
-      <h2 class="section-title">A Destination Built for Your Growth</h2>
-      <p class="section-desc">Germany offers healthcare professionals more than career opportunities — stability,
-        culture, and a globally connected society.</p>
-      <div class="germany-cards">
-        <div class="germany-card" style="transition-delay:0s">
-          <span class="g-icon"><img src="./myimages/icons/Frame 117.png"></span>
-          <div class="g-title">High Demand</div>
-          <div class="g-desc">Shortage projected to exceed 500,000 nurses by 2030.</div>
-          <div class="g-divider"></div>
-          <div class="g-tag">200,000+ Open Positions</div>
-        </div>
-        <div class="germany-card" style="transition-delay:0.1s">
-          <span class="g-icon"><img src="./myimages/icons/Frame 119.png"></span>
-          <div class="g-title">Long-Term Stay</div>
-          <div class="g-desc">Clear pathway to long-term settlement and security.</div>
-          <div class="g-divider"></div>
-          <div class="g-tag">Build a Stable Future</div>
-        </div>
-        <div class="germany-card" style="transition-delay:0.2s">
-          <span class="g-icon"><img src="./myimages/icons/Frame 119 (1).png"></span>
-          <div class="g-title">Work-Life Balance</div>
-          <div class="g-desc">Stable schedules and supportive work culture.</div>
-          <div class="g-divider"></div>
-          <div class="g-tag">Flexible &amp; Supportive Culture</div>
-        </div>
-        <div class="germany-card" style="transition-delay:0.3s">
-          <span class="g-icon"><img src="./myimages/icons/Frame 119 (1).png"></span>
-          <div class="g-title">Work-Life Balance</div>
-          <div class="g-desc">Stable schedules and supportive work culture.</div>
-          <div class="g-divider"></div>
-          <div class="g-tag">Flexible &amp; Supportive Culture</div>
-        </div>
-        <div class="germany-card" style="transition-delay:0.4s">
-          <span class="g-icon"><img src="./myimages/icons/Frame 119 (2).png"></span>
-          <div class="g-title">Welcoming Culture</div>
-          <div class="g-desc">150+ nationalities living and working in Germany.</div>
-          <div class="g-divider"></div>
-          <div class="g-tag">A Globally Connected Society</div>
-        </div>
-        <div class="germany-card" style="transition-delay:0.5s">
-          <span class="g-icon"><img src="./myimages/icons/Frame 119 (3).png"></span>
-          <div class="g-title">Indian Community</div>
-          <div class="g-desc">Festivals, groceries, food, and traditions away from home.</div>
-          <div class="g-divider"></div>
-          <div class="g-tag">Feel Closer to Home</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── WINDOW INTO GERMANY ── -->
-  <div class="window-section-wrapper">
-    <div class="window-section">
-      <div class="window-inner">
-        <div class="window-text">
-          <h2>Window into Germany <svg width="24" height="16" viewBox="0 0 5 3" style="display: inline-block; vertical-align: middle; margin-left: 10px; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.15);"><rect width="5" height="3" fill="#FFCC00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000000"/></svg></h2>
-          <p class="window-subtitle">A rewarding journey built on stability, growth, and opportunity.</p>
-          <div class="window-info-box">
-            <h3>A life style designed for growth</h3>
-            <p class="info-box-desc">Germany offers healthcare professionals more than career opportunities — it offers a secure, balanced, and globally connected way of living.</p>
-            <ul class="window-features-new">
-              <li class="feature-item-new">
-                <div class="feature-icon-new">
-                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    <path d="m9 11 2 2 4-4"/>
+            <div class="expanded">
+              <div class="left-top">
+                <div class="icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z" />
+                    <polyline points="9 12 11 14 15 10" />
                   </svg>
                 </div>
-                <div class="feature-content-new">
-                  <span class="feature-title-new">Safe & Structured Environment</span>
-                  <span class="feature-desc-new">Clean cities, reliable systems, and a lifestyle built around comfort, safety, and stability.</span>
-                </div>
-              </li>
-              <li class="feature-item-new">
-                <div class="feature-icon-new">
-                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-                    <path d="M2 12h20"/>
-                  </svg>
-                </div>
-                <div class="feature-content-new">
-                  <span class="feature-title-new">International Exposure</span>
-                  <span class="feature-desc-new">Experience multicultural communities, global opportunities, and the freedom to explore Europe.</span>
-                </div>
-              </li>
-              <li class="feature-item-new">
-                <div class="feature-icon-new">
-                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="4" y="3" width="16" height="16" rx="2"/>
-                    <path d="M4 11h16"/>
-                    <path d="M12 3v8"/>
-                    <path d="m8 19-2 3"/>
-                    <path d="m18 22-2-3"/>
-                    <circle cx="8" cy="15" r="1"/>
-                    <circle cx="16" cy="15" r="1"/>
-                  </svg>
-                </div>
-                <div class="feature-content-new">
-                  <span class="feature-title-new">Modern Everyday Living</span>
-                  <span class="feature-desc-new">Efficient public transport, advanced healthcare systems, and infrastructure designed for convenience.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="window-right">
-          <div class="window-watermark">
-            <div>GLOBAL</div>
-            <div>FUTURE</div>
-            <div>NEW</div>
-            <div>BEGINNING</div>
-          </div>
-          <img src="./myimages/girks.png" alt="" class="window-main-img">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-wrapper">
-    <!-- LEFT -->
-    <div class="hero-left">
-      <h1 class="hero-heading">
-        Take the first step<br>
-        towards your future<br>
-        in <span class="highlight">Germany</span>
-      </h1>
-      <p class="hero-subtext">
-        From language preparations to career opportunities we guide you
-        through every step of your german journey.
-      </p>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="hero-right kloiop">
-      <div class="btn-row">
-        <button class="btn-primary">Register Now</button>
-        <button class="btn-secondary">Talk to Us</button>
-      </div>
-
-      <div class="feature-list">
-        <div class="feature-item">
-          <div class="check-circle">
-            <svg viewBox="0 0 12 12" fill="none">
-              <path d="M2 6.5L4.8 9.5L10 3" stroke="#1a6bbf" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          Ethical Recruitment
-        </div>
-        <div class="feature-item">
-          <div class="check-circle">
-            <svg viewBox="0 0 12 12" fill="none">
-              <path d="M2 6.5L4.8 9.5L10 3" stroke="#1a6bbf" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          Germany-Focused Guidance
-        </div>
-        <div class="feature-item">
-          <div class="check-circle">
-            <svg viewBox="0 0 12 12" fill="none">
-              <path d="M2 6.5L4.8 9.5L10 3" stroke="#1a6bbf" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          End-to-End Support
-        </div>
-        <div class="feature-item">
-          <div class="check-circle">
-            <svg viewBox="0 0 12 12" fill="none">
-              <path d="M2 6.5L4.8 9.5L10 3" stroke="#1a6bbf" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          Healthcare Career Pathways
+              </div>
+              <div class="right-top">
+                <div class="num">03</div>
+                <h3 class="title">Fairness in Practice</h3>
+                <p class="desc">
+                  We believe opportunities should be built on honesty, equal
+                  guidance, and a people-first approach.
+                </p>
+              </div>
+              <ul class="checklist">
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Ethical support
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Transparent practices
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Equal opportunities
+                </li>
+                <li>
+                  <span class="check"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg></span
+                  >Human-centered guidance
+                </li>
+              </ul>
+            </div>
+            <img
+              src="./myimages/ABOUTSECTION_CARD 3_EXTENDED (1).png"
+              alt=""
+              class="card2a"
+            />
+          </article>
         </div>
       </div>
     </div>
-  </div>
 
-
-  <!-- ── FOOTER ── -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-logo">
-        <div class="footer-logo-mark">
-          <img src="./myimages/0 1.png" alt="">
-        </div>
-        <p class="footer-desc">Guiding candidates through language preparation, career opportunities, and global
-          mobility with a structured and transparent approach.</p>
-        <div class="footer-tags">
-          <span class="footer-tag">Germany-Focused</span>
-          <span class="footer-tag">Ethical Guidance</span>
-          <span class="footer-tag">Healthcare Careers</span>
-        </div>
-        <div class="social-links">
-          <a href="#" class="social-btn"><img src="./myimages/icons/FACEBOOK.png" alt=""></a>
-          <a href="#" class="social-btn"><img src="./myimages/icons/INSTAGRAM.png" alt=""></a>
-          <a href="#" class="social-btn"><img src="./myimages/icons/X.png" alt=""></a>
-          <a href="#" class="social-btn"><img src="./myimages/icons/LINKEDIN.png" alt=""></a>
+    <!-- ── YOUR JOURNEY ── -->
+    <section class="journey-section" id="journey">
+      <!-- Heading stays above the scroll story -->
+      <div class="journey-inner">
+        <div class="journey-header">
+          <span class="journey-tag">YOUR JOURNEY</span>
+          <h2 class="journey-title">
+            From Roots in India, Growing Towards Germany.
+          </h2>
+          <p class="journey-desc">
+            Every meaningful journey begins with a single step.<br />Stanora
+            guides you through every stage — from preparation and guidance to
+            building a future in Germany.
+          </p>
         </div>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="#">Global Pathways</a></li>
-          <li><a href="#">Talent Network</a></li>
-          <li><a href="#">Career Mobility</a></li>
-          <li><a href="#">Inside Stanora</a></li>
-        </ul>
+
+      <!-- Scroll story: tall wrapper so user scrolls THROUGH this section -->
+      <div class="journey-scroll-story">
+        <div class="journey-sticky">
+          <div class="journey-inner">
+            <div class="tree-layout">
+              <!-- Growing Tree -->
+              <div class="tree-container">
+                <img
+                  src="./myimages/tree.png"
+                  alt="Growing Tree"
+                  class="tree-image"
+                />
+              </div>
+
+              <!-- Step cards (absolutely positioned at branch heights) -->
+              <div class="journey-step from-right" id="step-1">
+                <div class="step-card">
+                  <div
+                    class="step-icon"
+                    style="background: rgba(59, 111, 212, 0.1)"
+                  >
+                    🔵
+                  </div>
+                  <div class="step-tag">01 — Begin Your Journey</div>
+                  <div class="step-title">A dream takes root.</div>
+                  <div class="step-desc">
+                    Create your profile and discover pathways aligned with your
+                    goals, aspirations, and future career opportunities in
+                    Germany.
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-step from-left" id="step-2">
+                <div class="step-card">
+                  <div
+                    class="step-icon"
+                    style="background: rgba(59, 111, 212, 0.1)"
+                  >
+                    📖
+                  </div>
+                  <div class="step-tag">02 — Learn &amp; Prepare</div>
+                  <div class="step-title">Preparing for What's Next</div>
+                  <div class="step-desc">
+                    Build confidence through language training, skill
+                    development, and guidance designed for your journey ahead.
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-step from-right" id="step-3">
+                <div class="step-card">
+                  <div
+                    class="step-icon"
+                    style="background: rgba(59, 111, 212, 0.1)"
+                  >
+                    📋
+                  </div>
+                  <div class="step-tag">03 — Documentation &amp; Visa</div>
+                  <div class="step-title">Clarity at Every Step</div>
+                  <div class="step-desc">
+                    Navigate every process with structured support, transparent
+                    guidance, and step-by-step assistance.
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-step from-left" id="step-4">
+                <div class="step-card">
+                  <div
+                    class="step-icon"
+                    style="background: rgba(232, 119, 34, 0.1)"
+                  >
+                    〰
+                  </div>
+                  <div class="step-tag">04 — Transition with Confidence</div>
+                  <div class="step-title">Crossing New Paths</div>
+                  <div class="step-desc">
+                    Move beyond preparation and step into a new chapter shaped
+                    by guidance, opportunity, and global experiences.
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-step from-right" id="step-5">
+                <div
+                  class="step-card"
+                  style="border-color: rgba(232, 119, 34, 0.3)"
+                >
+                  <div
+                    class="step-icon"
+                    style="background: rgba(232, 119, 34, 0.1)"
+                  >
+                    🌐
+                  </div>
+                  <div class="step-tag" style="color: var(--orange)">
+                    05 — Grow in Germany
+                  </div>
+                  <div class="step-title">Where New Futures Begin</div>
+                  <div class="step-desc">
+                    Step into opportunities that open pathways toward long-term
+                    growth, global exposure, and a better tomorrow.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4>Get in Touch</h4>
-        <div class="contact-item">
-          <span class="contact-icon"><img src="./myimages/icons/Frame (5).png" alt=""></span>
-          <div class="contact-info">
-            <strong>Germany &amp; India Operations</strong>
-            <span>Supporting candidates across both regions with dedicated guidance and assistance.</span>
+    </section>
+    <!-- ── WHY GERMANY ── -->
+    <section class="why-section" id="why-germany">
+      <div class="why-inner">
+        <span class="journey-tag" style="text-align: center">Why Germany</span>
+        <h2 class="section-title">A Destination Built for Your Growth</h2>
+        <p class="section-desc">
+          Germany offers healthcare professionals more than career opportunities
+          — stability, culture, and a globally connected society.
+        </p>
+        <div class="germany-cards">
+          <div class="germany-card" style="transition-delay: 0s">
+            <span class="g-icon"
+              ><img src="./myimages/icons/Frame 117.png"
+            /></span>
+            <div class="g-title">High Demand</div>
+            <div class="g-desc">
+              Shortage projected to exceed 500,000 nurses by 2030.
+            </div>
+            <div class="g-divider"></div>
+            <div class="g-tag">200,000+ Open Positions</div>
+          </div>
+          <div class="germany-card" style="transition-delay: 0.1s">
+            <span class="g-icon"
+              ><img src="./myimages/icons/Frame 119.png"
+            /></span>
+            <div class="g-title">Long-Term Stay</div>
+            <div class="g-desc">
+              Clear pathway to long-term settlement and security.
+            </div>
+            <div class="g-divider"></div>
+            <div class="g-tag">Build a Stable Future</div>
+          </div>
+          <div class="germany-card" style="transition-delay: 0.2s">
+            <span class="g-icon"
+              ><img src="./myimages/icons/Frame 119 (1).png"
+            /></span>
+            <div class="g-title">Work-Life Balance</div>
+            <div class="g-desc">
+              Stable schedules and supportive work culture.
+            </div>
+            <div class="g-divider"></div>
+            <div class="g-tag">Flexible &amp; Supportive Culture</div>
+          </div>
+          <div class="germany-card" style="transition-delay: 0.3s">
+            <span class="g-icon"
+              ><img src="./myimages/icons/Frame 119 (1).png"
+            /></span>
+            <div class="g-title">Work-Life Balance</div>
+            <div class="g-desc">
+              Stable schedules and supportive work culture.
+            </div>
+            <div class="g-divider"></div>
+            <div class="g-tag">Flexible &amp; Supportive Culture</div>
+          </div>
+          <div class="germany-card" style="transition-delay: 0.4s">
+            <span class="g-icon"
+              ><img src="./myimages/icons/Frame 119 (2).png"
+            /></span>
+            <div class="g-title">Welcoming Culture</div>
+            <div class="g-desc">
+              150+ nationalities living and working in Germany.
+            </div>
+            <div class="g-divider"></div>
+            <div class="g-tag">A Globally Connected Society</div>
+          </div>
+          <div class="germany-card" style="transition-delay: 0.5s">
+            <span class="g-icon"
+              ><img src="./myimages/icons/Frame 119 (3).png"
+            /></span>
+            <div class="g-title">Indian Community</div>
+            <div class="g-desc">
+              Festivals, groceries, food, and traditions away from home.
+            </div>
+            <div class="g-divider"></div>
+            <div class="g-tag">Feel Closer to Home</div>
           </div>
         </div>
-        <div class="contact-item">
-          <span class="contact-icon"><img src="./myimages/icons/google mail.png" alt=""></span>
-          <div class="contact-info">
-            <strong>hello@stanora.com</strong>
+      </div>
+    </section>
+
+    <!-- ── WINDOW INTO GERMANY ── -->
+    <div class="window-section-wrapper">
+      <div class="window-section">
+        <div class="window-inner">
+          <div class="window-text">
+            <h2>
+              Window into Germany
+              <svg
+                width="24"
+                height="16"
+                viewBox="0 0 5 3"
+                style="
+                  display: inline-block;
+                  vertical-align: middle;
+                  margin-left: 10px;
+                  border-radius: 3px;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+                "
+              >
+                <rect width="5" height="3" fill="#FFCC00" />
+                <rect width="5" height="2" fill="#DD0000" />
+                <rect width="5" height="1" fill="#000000" />
+              </svg>
+            </h2>
+            <p class="window-subtitle">
+              A rewarding journey built on stability, growth, and opportunity.
+            </p>
+            <div class="window-info-box">
+              <h3>A life style designed for growth</h3>
+              <p class="info-box-desc">
+                Germany offers healthcare professionals more than career
+                opportunities — it offers a secure, balanced, and globally
+                connected way of living.
+              </p>
+              <ul class="window-features-new">
+                <li class="feature-item-new">
+                  <div class="feature-icon-new">
+                    <svg
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <path d="m9 11 2 2 4-4" />
+                    </svg>
+                  </div>
+                  <div class="feature-content-new">
+                    <span class="feature-title-new"
+                      >Safe & Structured Environment</span
+                    >
+                    <span class="feature-desc-new"
+                      >Clean cities, reliable systems, and a lifestyle built
+                      around comfort, safety, and stability.</span
+                    >
+                  </div>
+                </li>
+                <li class="feature-item-new">
+                  <div class="feature-icon-new">
+                    <svg
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path
+                        d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+                      />
+                      <path d="M2 12h20" />
+                    </svg>
+                  </div>
+                  <div class="feature-content-new">
+                    <span class="feature-title-new"
+                      >International Exposure</span
+                    >
+                    <span class="feature-desc-new"
+                      >Experience multicultural communities, global
+                      opportunities, and the freedom to explore Europe.</span
+                    >
+                  </div>
+                </li>
+                <li class="feature-item-new">
+                  <div class="feature-icon-new">
+                    <svg
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="4" y="3" width="16" height="16" rx="2" />
+                      <path d="M4 11h16" />
+                      <path d="M12 3v8" />
+                      <path d="m8 19-2 3" />
+                      <path d="m18 22-2-3" />
+                      <circle cx="8" cy="15" r="1" />
+                      <circle cx="16" cy="15" r="1" />
+                    </svg>
+                  </div>
+                  <div class="feature-content-new">
+                    <span class="feature-title-new"
+                      >Modern Everyday Living</span
+                    >
+                    <span class="feature-desc-new"
+                      >Efficient public transport, advanced healthcare systems,
+                      and infrastructure designed for convenience.</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon"><img src="./myimages/icons/Frame (6).png" alt=""></span>
-          <div class="contact-info">
-            <strong>+91 XXXXX XXXXX</strong>
-          </div>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon"><img src="./myimages/icons/Frame (7).png" alt=""></span>
-          <div class="contact-info">
-            <strong>Support Hours</strong>
-            <span>Monday – Saturday<br>10:00 AM – 6:00 PM</span>
+          <div class="window-right">
+            <div class="window-watermark">
+              <div>GLOBAL</div>
+              <div>FUTURE</div>
+              <div>NEW</div>
+              <div>BEGINNING</div>
+            </div>
+            <img src="./myimages/girks.png" alt="" class="window-main-img" />
           </div>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Stanora. All rights reserved.</span>
-    </div>
-  </footer>
 
-  <script>
-    // ── COUNT-UP ANIMATION ──
-    function countUp(el) {
-      const target = parseInt(el.dataset.target);
-      const duration = 2000;
-      const start = Date.now();
-      const timer = setInterval(() => {
-        const elapsed = Date.now() - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const ease = 1 - Math.pow(1 - progress, 3);
-        const current = Math.floor(ease * target);
-        // Format large numbers
-        if (target >= 100000) {
-          el.textContent = (current / 1000).toFixed(0) + ',000';
-        } else if (target >= 1000) {
-          el.textContent = (current / 1000).toFixed(0);
+    <div class="hero-wrapper">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <h1 class="hero-heading">
+          Take the first step<br />
+          towards your future<br />
+          in <span class="highlight">Germany</span>
+        </h1>
+        <p class="hero-subtext">
+          From language preparations to career opportunities we guide you
+          through every step of your german journey.
+        </p>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right kloiop">
+        <div class="btn-row">
+          <button class="btn-primary">Register Now</button>
+          <button class="btn-secondary">Talk to Us</button>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="check-circle">
+              <svg viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2 6.5L4.8 9.5L10 3"
+                  stroke="#1a6bbf"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Ethical Recruitment
+          </div>
+          <div class="feature-item">
+            <div class="check-circle">
+              <svg viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2 6.5L4.8 9.5L10 3"
+                  stroke="#1a6bbf"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Germany-Focused Guidance
+          </div>
+          <div class="feature-item">
+            <div class="check-circle">
+              <svg viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2 6.5L4.8 9.5L10 3"
+                  stroke="#1a6bbf"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            End-to-End Support
+          </div>
+          <div class="feature-item">
+            <div class="check-circle">
+              <svg viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2 6.5L4.8 9.5L10 3"
+                  stroke="#1a6bbf"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            Healthcare Career Pathways
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer id="contact">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <div class="footer-logo-mark">
+            <img src="./myimages/0 1.png" alt="" />
+          </div>
+          <p class="footer-desc">
+            Guiding candidates through language preparation, career
+            opportunities, and global mobility with a structured and transparent
+            approach.
+          </p>
+          <div class="footer-tags">
+            <span class="footer-tag">Germany-Focused</span>
+            <span class="footer-tag">Ethical Guidance</span>
+            <span class="footer-tag">Healthcare Careers</span>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-btn"
+              ><img src="./myimages/icons/FACEBOOK.png" alt=""
+            /></a>
+            <a href="#" class="social-btn"
+              ><img src="./myimages/icons/INSTAGRAM.png" alt=""
+            /></a>
+            <a href="#" class="social-btn"
+              ><img src="./myimages/icons/X.png" alt=""
+            /></a>
+            <a href="#" class="social-btn"
+              ><img src="./myimages/icons/LINKEDIN.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about-stanora">About Stanora</a></li>
+            <li><a href="#journey">Your Journey</a></li>
+            <li><a href="#why-germany">Why Germany</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <div class="contact-item">
+            <span class="contact-icon"
+              ><img src="./myimages/icons/Frame (5).png" alt=""
+            /></span>
+            <div class="contact-info">
+              <strong>Germany &amp; India Operations</strong>
+              <span
+                >Supporting candidates across both regions with dedicated
+                guidance and assistance.</span
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"
+              ><img src="./myimages/icons/google mail.png" alt=""
+            /></span>
+            <div class="contact-info">
+              <strong>hello@stanora.com</strong>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"
+              ><img src="./myimages/icons/Frame (6).png" alt=""
+            /></span>
+            <div class="contact-info">
+              <strong>+91 XXXXX XXXXX</strong>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"
+              ><img src="./myimages/icons/Frame (7).png" alt=""
+            /></span>
+            <div class="contact-info">
+              <strong>Support Hours</strong>
+              <span>Monday – Saturday<br />10:00 AM – 6:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Stanora. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script>
+      // ── SCROLL SPY FOR ACTIVE NAV LINKS ──
+      document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('#about-stanora, #journey, #why-germany, footer#contact');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const options = {
+          root: null,
+          rootMargin: '-20% 0px -60% 0px', // triggers when the section occupies the center of viewport
+          threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${id}`) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }, options);
+
+        sections.forEach(section => observer.observe(section));
+      });
+
+      // ── COUNT-UP ANIMATION ──
+      function countUp(el) {
+        const target = parseInt(el.dataset.target);
+        const duration = 2000;
+        const start = Date.now();
+        const timer = setInterval(() => {
+          const elapsed = Date.now() - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(ease * target);
+          // Format large numbers
+          if (target >= 100000) {
+            el.textContent = (current / 1000).toFixed(0) + ",000";
+          } else if (target >= 1000) {
+            el.textContent = (current / 1000).toFixed(0);
+          } else {
+            el.textContent = current;
+          }
+          if (progress === 1) clearInterval(timer);
+        }, 16);
+      }
+
+      // ── INTERSECTION OBSERVER ──
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              el.classList.add("visible");
+
+              // Trigger count-up for stat cards
+              el.querySelectorAll(".countup").forEach((n) => countUp(n));
+
+              observer.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      // Observe all animated elements
+      document
+        .querySelectorAll(".what-card, .germany-card")
+        .forEach((el) => observer.observe(el));
+
+      // ── JOURNEY: Sticky scroll story — tree grows as you scroll through the tall wrapper ──
+      const journeySteps = document.querySelectorAll(".journey-step");
+      const treeImage = document.querySelector(".tree-image");
+      const scrollStory = document.querySelector(".journey-scroll-story");
+
+      const CARD_THRESHOLDS = {
+        "step-1": 0.2, // roots level — first to appear
+        "step-2": 0.38,
+        "step-3": 0.54,
+        "step-4": 0.7,
+        "step-5": 0.86, // canopy level — last to appear
+      };
+
+      let mobileStepsObserved = false;
+
+      function runJourneyScroll() {
+        const isMobile = window.innerWidth <= 1024;
+        if (isMobile) {
+          if (treeImage) treeImage.style.clipPath = "none";
+          if (!mobileStepsObserved) {
+            journeySteps.forEach((s) => observer.observe(s));
+            mobileStepsObserved = true;
+          }
+          return;
+        }
+        if (!scrollStory || !treeImage) return;
+
+        const rect = scrollStory.getBoundingClientRect();
+        const storyH = scrollStory.offsetHeight; // 280vh
+        const vh = window.innerHeight;
+
+        // How far through the tall story have we scrolled?
+        // scrolled = 0 when story top = viewport top (sticky just locked)
+        // scrolled = storyH - vh when story bottom = viewport bottom (sticky unlocks)
+        const scrolled = -rect.top; // px scrolled into the story
+        const maxScroll = storyH - vh; // total scroll range inside story
+
+        let p = scrolled / maxScroll;
+        p = Math.max(0, Math.min(1, p));
+
+        // Tree: clip from top → reveals from bottom upward
+        treeImage.style.clipPath = `inset(${Math.round((1 - p) * 100)}% 0 0 0)`;
+
+        // Cards: appear/disappear bidirectionally
+        journeySteps.forEach((step) => {
+          if (p >= (CARD_THRESHOLDS[step.id] ?? 0))
+            step.classList.add("visible");
+          else step.classList.remove("visible");
+        });
+      }
+
+      window.addEventListener("scroll", runJourneyScroll, { passive: true });
+      window.addEventListener("resize", runJourneyScroll);
+      runJourneyScroll();
+
+      // Trigger count-up when hero stat cards come in
+      const statObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target
+                .querySelectorAll(".countup")
+                .forEach((el) => countUp(el));
+              statObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+      document
+        .querySelectorAll(".stat-card")
+        .forEach((el) => statObserver.observe(el));
+
+      // ── GLOW PULSE ON FLAGS ──
+      function pulseGlow() {
+        const glows = document.querySelectorAll(".root-glow, .dest-glow");
+        glows.forEach((g) => {
+          g.style.transition = "opacity 1s ease-in-out";
+          g.style.opacity = "0.2";
+          setTimeout(() => {
+            g.style.opacity = "0.8";
+          }, 1000);
+          setTimeout(() => {
+            g.style.opacity = "0.2";
+          }, 2000);
+        });
+        setTimeout(pulseGlow, 2000);
+      }
+      setTimeout(pulseGlow, 500);
+
+      // ── HAMBURGER MENU ──
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("open");
+        navLinks.classList.toggle("open");
+      });
+      // Close on link click
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("open");
+          navLinks.classList.remove("open");
+        });
+      });
+
+      // ── NAVBAR SCROLL EFFECT ──
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 50) {
+          nav.style.boxShadow = "0 4px 24px rgba(26,39,68,0.1)";
         } else {
-          el.textContent = current;
-        }
-        if (progress === 1) clearInterval(timer);
-      }, 16);
-    }
-
-    // ── INTERSECTION OBSERVER ──
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          el.classList.add('visible');
-
-          // Trigger count-up for stat cards
-          el.querySelectorAll('.countup').forEach(n => countUp(n));
-
-          observer.unobserve(el);
+          nav.style.boxShadow = "none";
         }
       });
-    }, { threshold: 0.15 });
 
-    // Observe all animated elements
-    document.querySelectorAll('.what-card, .germany-card').forEach(el => observer.observe(el));
+      // ── HERO ENTRANCE ANIMATION (stagger stat cards with countup) ──
+      setTimeout(() => {
+        document
+          .querySelectorAll(".stat-card .countup")
+          .forEach((el) => countUp(el));
+      }, 1200);
+      // ── AIRPLANE SCROLL ANIMATION ──
+      const airplane = document.getElementById("airplane-pointer");
+      const path = document.getElementById("flight-path");
+      const pathContainer = document.querySelector(".flight-path-container");
+      const viewBoxWidth = 1000;
+      const viewBoxHeight = 5000;
 
-    // ── JOURNEY: Sticky scroll story — tree grows as you scroll through the tall wrapper ──
-    const journeySteps  = document.querySelectorAll('.journey-step');
-    const treeImage     = document.querySelector('.tree-image');
-    const scrollStory   = document.querySelector('.journey-scroll-story');
+      function animateAirplane() {
+        if (!airplane || !path || !pathContainer) return;
 
-    const CARD_THRESHOLDS = {
-      'step-1': 0.20,   // roots level — first to appear
-      'step-2': 0.38,
-      'step-3': 0.54,
-      'step-4': 0.70,
-      'step-5': 0.86,   // canopy level — last to appear
-    };
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+        const maxScroll = docHeight - winHeight;
+        if (maxScroll <= 0) return;
 
-    let mobileStepsObserved = false;
+        const scrollPercent = Math.max(
+          0,
+          Math.min(1, window.scrollY / maxScroll),
+        );
 
-    function runJourneyScroll() {
-      const isMobile = window.innerWidth <= 1024;
-      if (isMobile) {
-        if (treeImage) treeImage.style.clipPath = 'none';
-        if (!mobileStepsObserved) {
-          journeySteps.forEach(s => observer.observe(s));
-          mobileStepsObserved = true;
+        // Trigger takeoff animation near the footer
+        if (scrollPercent > 0.97) {
+          airplane.classList.add("take-off");
+          return;
+        } else {
+          airplane.classList.remove("take-off");
         }
-        return;
-      }
-      if (!scrollStory || !treeImage) return;
 
-      const rect    = scrollStory.getBoundingClientRect();
-      const storyH  = scrollStory.offsetHeight;  // 280vh
-      const vh      = window.innerHeight;
+        // Calculate position along the SVG path
+        const pathLength = path.getTotalLength();
+        const distance = scrollPercent * pathLength;
+        const point = path.getPointAtLength(distance);
 
-      // How far through the tall story have we scrolled?
-      // scrolled = 0 when story top = viewport top (sticky just locked)
-      // scrolled = storyH - vh when story bottom = viewport bottom (sticky unlocks)
-      const scrolled = -rect.top;              // px scrolled into the story
-      const maxScroll = storyH - vh;           // total scroll range inside story
+        // Calculate tangent angle for rotation
+        const nextDistance = Math.min(pathLength, distance + 2);
+        const nextPoint = path.getPointAtLength(nextDistance);
+        const angleRad = Math.atan2(
+          nextPoint.y - point.y,
+          nextPoint.x - point.x,
+        );
+        const angleDeg = (angleRad * 180) / Math.PI;
 
-      let p = scrolled / maxScroll;
-      p = Math.max(0, Math.min(1, p));
+        // Map local SVG coordinates to absolute page pixel positions
+        const containerWidth = pathContainer.clientWidth;
+        const containerHeight = pathContainer.clientHeight;
+        const pxX = (point.x / viewBoxWidth) * containerWidth;
+        const pxY = (point.y / viewBoxHeight) * containerHeight;
 
-      // Tree: clip from top → reveals from bottom upward
-      treeImage.style.clipPath = `inset(${Math.round((1 - p) * 100)}% 0 0 0)`;
-
-      // Cards: appear/disappear bidirectionally
-      journeySteps.forEach(step => {
-        if (p >= (CARD_THRESHOLDS[step.id] ?? 0)) step.classList.add('visible');
-        else step.classList.remove('visible');
-      });
-    }
-
-    window.addEventListener('scroll', runJourneyScroll, { passive: true });
-    window.addEventListener('resize', runJourneyScroll);
-    runJourneyScroll();
-
-
-    // Trigger count-up when hero stat cards come in
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.countup').forEach(el => countUp(el));
-          statObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('.stat-card').forEach(el => statObserver.observe(el));
-
-    // ── GLOW PULSE ON FLAGS ──
-    function pulseGlow() {
-      const glows = document.querySelectorAll('.root-glow, .dest-glow');
-      glows.forEach(g => {
-        g.style.transition = 'opacity 1s ease-in-out';
-        g.style.opacity = '0.2';
-        setTimeout(() => { g.style.opacity = '0.8'; }, 1000);
-        setTimeout(() => { g.style.opacity = '0.2'; }, 2000);
-      });
-      setTimeout(pulseGlow, 2000);
-    }
-    setTimeout(pulseGlow, 500);
-
-    // ── HAMBURGER MENU ──
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
-
-    // ── NAVBAR SCROLL EFFECT ──
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.style.boxShadow = '0 4px 24px rgba(26,39,68,0.1)';
-      } else {
-        nav.style.boxShadow = 'none';
-      }
-    });
-
-    // ── HERO ENTRANCE ANIMATION (stagger stat cards with countup) ──
-    setTimeout(() => {
-      document.querySelectorAll('.stat-card .countup').forEach(el => countUp(el));
-    }, 1200);
-    // ── AIRPLANE SCROLL ANIMATION ──
-    const airplane = document.getElementById('airplane-pointer');
-    const path = document.getElementById('flight-path');
-    const pathContainer = document.querySelector('.flight-path-container');
-    const viewBoxWidth = 1000;
-    const viewBoxHeight = 5000;
-
-    function animateAirplane() {
-      if (!airplane || !path || !pathContainer) return;
-
-      const docHeight = document.documentElement.scrollHeight;
-      const winHeight = window.innerHeight;
-      const maxScroll = docHeight - winHeight;
-      if (maxScroll <= 0) return;
-
-      const scrollPercent = Math.max(0, Math.min(1, window.scrollY / maxScroll));
-
-      // Trigger takeoff animation near the footer
-      if (scrollPercent > 0.97) {
-        airplane.classList.add('take-off');
-        return;
-      } else {
-        airplane.classList.remove('take-off');
+        // Position and rotate the airplane (SVG points up, so offset by 90deg)
+        airplane.style.left = `${pxX}px`;
+        airplane.style.top = `${pxY}px`;
+        airplane.style.transform = `translate(-50%, -50%) rotate(${angleDeg + 90}deg)`;
       }
 
-      // Calculate position along the SVG path
-      const pathLength = path.getTotalLength();
-      const distance = scrollPercent * pathLength;
-      const point = path.getPointAtLength(distance);
+      window.addEventListener("scroll", animateAirplane, { passive: true });
+      window.addEventListener("resize", animateAirplane);
+      // Initialize after a slight delay to allow rendering and height calculations
+      setTimeout(animateAirplane, 100);
 
-      // Calculate tangent angle for rotation
-      const nextDistance = Math.min(pathLength, distance + 2);
-      const nextPoint = path.getPointAtLength(nextDistance);
-      const angleRad = Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x);
-      const angleDeg = (angleRad * 180) / Math.PI;
-
-      // Map local SVG coordinates to absolute page pixel positions
-      const containerWidth = pathContainer.clientWidth;
-      const containerHeight = pathContainer.clientHeight;
-      const pxX = (point.x / viewBoxWidth) * containerWidth;
-      const pxY = (point.y / viewBoxHeight) * containerHeight;
-
-      // Position and rotate the airplane (SVG points up, so offset by 90deg)
-      airplane.style.left = `${pxX}px`;
-      airplane.style.top = `${pxY}px`;
-      airplane.style.transform = `translate(-50%, -50%) rotate(${angleDeg + 90}deg)`;
-    }
-
-    window.addEventListener('scroll', animateAirplane, { passive: true });
-    window.addEventListener('resize', animateAirplane);
-    // Initialize after a slight delay to allow rendering and height calculations
-    setTimeout(animateAirplane, 100);
-
-    // Watch for body height changes (as images/fonts load) and dynamically adjust airplane position
-    if (typeof ResizeObserver !== 'undefined') {
-      const resizeObserver = new ResizeObserver(() => {
-        animateAirplane();
-      });
-      resizeObserver.observe(document.body);
-    }
-  </script>
-</body>
-
-</html><!-- Responsive styles injected -->
+      // Watch for body height changes (as images/fonts load) and dynamically adjust airplane position
+      if (typeof ResizeObserver !== "undefined") {
+        const resizeObserver = new ResizeObserver(() => {
+          animateAirplane();
+        });
+        resizeObserver.observe(document.body);
+      }
+    </script>
+  </body>
+</html>
+<!-- Responsive styles injected -->
