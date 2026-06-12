@@ -94,7 +94,7 @@
       }
 
       .nav-links a::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -487,19 +487,25 @@
       .card-1 {
         top: -75px;
         right: 25px;
-        animation: slide-in-right 0.8s ease-out 0.8s both, float-1 4.5s ease-in-out 1.6s infinite;
+        animation:
+          slide-in-right 0.8s ease-out 0.8s both,
+          float-1 4.5s ease-in-out 1.6s infinite;
       }
 
       .card-2 {
         top: 95px;
         right: -11px;
-        animation: slide-in-right 0.8s ease-out 1.0s both, float-2 5.5s ease-in-out 1.8s infinite;
+        animation:
+          slide-in-right 0.8s ease-out 1s both,
+          float-2 5.5s ease-in-out 1.8s infinite;
       }
 
       .card-3 {
         bottom: 117px;
         right: 4px;
-        animation: slide-in-right 0.8s ease-out 1.2s both, float-3 5.0s ease-in-out 2.0s infinite;
+        animation:
+          slide-in-right 0.8s ease-out 1.2s both,
+          float-3 5s ease-in-out 2s infinite;
       }
 
       @keyframes fade-up {
@@ -537,16 +543,31 @@
       }
 
       @keyframes float-1 {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
       @keyframes float-2 {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
       }
       @keyframes float-3 {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-12px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
       }
 
       /* Count-up animation for stats */
@@ -1275,7 +1296,6 @@
         display: grid;
         grid-template-columns: 2fr 1fr 1.5fr;
         gap: 60px;
-        margin-bottom: 50px;
       }
 
       .footer-logo {
@@ -2015,10 +2035,11 @@
 
     <!-- ── NAVBAR ── -->
     <nav>
-      <div class="logo">
+      <a href="#home" class="logo">
         <img src="./myimages/0 1.png" alt="" />
-      </div>
+      </a>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
         <li><a href="#about-stanora">About Stanora</a></li>
         <li><a href="#journey">Your Journey</a></li>
         <li><a href="#why-germany">Why Germany</a></li>
@@ -2034,7 +2055,7 @@
     </nav>
 
     <!-- ── HERO ── -->
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="hero-bg-circle"></div>
       <!-- Dashed diagonal lines -->
       <div class="hero-inner">
@@ -2866,13 +2887,7 @@
           </div>
           <div class="social-links">
             <a href="#" class="social-btn"
-              ><img src="./myimages/icons/FACEBOOK.png" alt=""
-            /></a>
-            <a href="#" class="social-btn"
               ><img src="./myimages/icons/INSTAGRAM.png" alt=""
-            /></a>
-            <a href="#" class="social-btn"
-              ><img src="./myimages/icons/X.png" alt=""
             /></a>
             <a href="#" class="social-btn"
               ><img src="./myimages/icons/LINKEDIN.png" alt=""
@@ -2907,7 +2922,7 @@
               ><img src="./myimages/icons/google mail.png" alt=""
             /></span>
             <div class="contact-info">
-              <strong>hello@stanora.com</strong>
+              <strong>Stanaglobal@gmail.com</strong>
             </div>
           </div>
           <div class="contact-item">
@@ -2936,31 +2951,33 @@
 
     <script>
       // ── SCROLL SPY FOR ACTIVE NAV LINKS ──
-      document.addEventListener('DOMContentLoaded', () => {
-        const sections = document.querySelectorAll('#about-stanora, #journey, #why-germany, footer#contact');
-        const navLinks = document.querySelectorAll('.nav-links a');
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll(
+          "#home, #about-stanora, #journey, #why-germany, footer#contact",
+        );
+        const navLinks = document.querySelectorAll(".nav-links a");
 
         const options = {
           root: null,
-          rootMargin: '-20% 0px -60% 0px', // triggers when the section occupies the center of viewport
-          threshold: 0
+          rootMargin: "-20% 0px -60% 0px", // triggers when the section occupies the center of viewport
+          threshold: 0,
         };
 
         const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              const id = entry.target.getAttribute('id');
-              navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${id}`) {
-                  link.classList.add('active');
+              const id = entry.target.getAttribute("id");
+              navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${id}`) {
+                  link.classList.add("active");
                 }
               });
             }
           });
         }, options);
 
-        sections.forEach(section => observer.observe(section));
+        sections.forEach((section) => observer.observe(section));
       });
 
       // ── COUNT-UP ANIMATION ──
@@ -3138,6 +3155,7 @@
 
       let lastScrollPercent = 0;
       let isScrollingUp = false;
+      let hasScrolled = false;
 
       function animateAirplane() {
         if (!airplane || !path || !pathContainer) return;
@@ -3152,12 +3170,16 @@
           Math.min(1, window.scrollY / maxScroll),
         );
 
-        // Trigger takeoff animation near the top or near the footer
-        if (scrollPercent < 0.03) {
+        if (window.scrollY > 15) {
+          hasScrolled = true;
+        }
+
+        // Trigger takeoff animation near the top (after scrolling has started) or near the footer
+        if (hasScrolled && scrollPercent < 0.01) {
           airplane.classList.add("take-off-top");
           airplane.classList.remove("take-off");
           return;
-        } else if (scrollPercent > 0.97) {
+        } else if (scrollPercent >= 0.99) {
           airplane.classList.add("take-off");
           airplane.classList.remove("take-off-top");
           return;
@@ -3219,7 +3241,7 @@
         const angleDeg = (angleRad * 180) / Math.PI;
 
         // Position and rotate the airplane (SVG points up, so offset by 90deg or -90deg if scrolling up)
-        const rotationAngle = isScrollingUp ? (angleDeg - 90) : (angleDeg + 90);
+        const rotationAngle = isScrollingUp ? angleDeg - 90 : angleDeg + 90;
         airplane.style.left = `${pxX}px`;
         airplane.style.top = `${pxY}px`;
         airplane.style.transform = `translate(-50%, -50%) rotate(${rotationAngle}deg)`;
