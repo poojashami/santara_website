@@ -1286,14 +1286,14 @@
       footer {
         background-color: #0d1f45; /* Fallback rich blue */
         background-image: url("./myimages/FOOTER\ bg.png");
-        padding: 70px 5% 12px;
+        padding: 40px 5% 12px;
         color: rgba(255, 255, 255, 0.75);
         background-size: cover;
       }
 
       .footer-grid {
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 5px auto;
         display: grid;
         grid-template-columns: 2fr 1fr 1.5fr;
         gap: 60px;
@@ -1302,24 +1302,28 @@
       .footer-logo {
         display: flex;
         flex-direction: column;
+        background: #ffffff;
+        color: #102b5c;
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
       }
 
-      .footer-logo-box {
-        background: #ffffff;
-        padding: 10px 18px;
-        border-radius: 8px;
-        width: fit-content;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      .footer-logo .footer-desc {
+        color: #102b5c;
+      }
+
+      .footer-logo .footer-tag {
+        border: 1px solid rgba(16, 43, 92, 0.2);
+        color: #102b5c;
+        background: rgba(16, 43, 92, 0.04);
       }
 
       .footer-logo-link {
         display: flex;
         align-items: center;
         text-decoration: none;
+        margin-bottom: 12px;
       }
 
       .footer-logo-link img {
@@ -1335,15 +1339,16 @@
       .footer-desc {
         font-size: 0.85rem;
         line-height: 1.7;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         max-width: 300px;
+        padding-left: 10px;
       }
 
       .footer-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin-bottom: 24px;
+        margin-bottom: 10px;
       }
 
       .footer-tag {
@@ -2899,11 +2904,9 @@
     <footer id="contact">
       <div class="footer-grid">
         <div class="footer-logo">
-          <div class="footer-logo-box">
-            <a href="#home" class="footer-logo-link">
-              <img src="./myimages/0 1.png" alt="Stanora Logo" />
-            </a>
-          </div>
+          <a href="#home" class="footer-logo-link">
+            <img src="./myimages/0 1.png" alt="Stanora Logo" />
+          </a>
           <p class="footer-desc">
             Guiding candidates through language preparation, career
             opportunities, and global mobility with a structured and transparent
@@ -2949,10 +2952,18 @@
           </div>
           <div class="contact-item">
             <div class="social-links">
-              <a href="https://www.instagram.com/stanorasolutions?igsh=MTYycnF3dDF0bXh4ZA%3D%3D" target="_blank" rel="noopener noreferrer" class="social-btn"
+              <a
+                href="https://www.instagram.com/stanorasolutions?igsh=MTYycnF3dDF0bXh4ZA%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
                 ><img src="./myimages/icons/INSTAGRAM.png" alt="Instagram"
               /></a>
-              <a href="https://www.linkedin.com/company/stanora-global/" target="_blank" rel="noopener noreferrer" class="social-btn"
+              <a
+                href="https://www.linkedin.com/company/stanora-global/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
                 ><img src="./myimages/icons/LINKEDIN.png" alt="LinkedIn"
               /></a>
             </div>
@@ -2960,7 +2971,15 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>Copyright @2026 Stanora. All Rights Reserved © Developed by <a href="https://indicorpit.com/" target="_blank" rel="noopener noreferrer">IndiCorp IT Solutions Pvt Ltd</a></span>
+        <span
+          >Copyright @2026 Stanora. All Rights Reserved © Developed by
+          <a
+            href="https://indicorpit.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >IndiCorp IT Solutions Pvt Ltd</a
+          ></span
+        >
       </div>
     </footer>
 
