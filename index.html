@@ -786,7 +786,7 @@
           transform: translateY(0px);
         }
         50% {
-          transform: translateY(-6px);
+          transform: translateY(-15px);
         }
       }
 
@@ -1970,6 +1970,15 @@
         transform: translate(400px, -400px) rotate(-35deg) scale(0.5) !important;
         opacity: 0;
       }
+
+      /* Takeoff animation when scrolling near the top */
+      .airplane-pointer.take-off-top {
+        transition:
+          transform 1.5s cubic-bezier(0.25, 1, 0.5, 1),
+          opacity 1.2s ease-out;
+        transform: translate(400px, -400px) rotate(-35deg) scale(0.5) !important;
+        opacity: 0;
+      }
     </style>
   </head>
 
@@ -3005,11 +3014,11 @@
       const scrollStory = document.querySelector(".journey-scroll-story");
 
       const CARD_THRESHOLDS = {
-        "step-1": 0.2, // roots level — first to appear
-        "step-2": 0.38,
-        "step-3": 0.54,
-        "step-4": 0.7,
-        "step-5": 0.86, // canopy level — last to appear
+        "step-1": 0,
+        "step-2": 0,
+        "step-3": 0,
+        "step-4": 0,
+        "step-5": 0,
       };
 
       let mobileStepsObserved = false;
@@ -3143,12 +3152,18 @@
           Math.min(1, window.scrollY / maxScroll),
         );
 
-        // Trigger takeoff animation near the footer
-        if (scrollPercent > 0.97) {
+        // Trigger takeoff animation near the top or near the footer
+        if (scrollPercent < 0.03) {
+          airplane.classList.add("take-off-top");
+          airplane.classList.remove("take-off");
+          return;
+        } else if (scrollPercent > 0.97) {
           airplane.classList.add("take-off");
+          airplane.classList.remove("take-off-top");
           return;
         } else {
           airplane.classList.remove("take-off");
+          airplane.classList.remove("take-off-top");
         }
 
         // Track scroll direction
