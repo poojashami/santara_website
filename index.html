@@ -1939,7 +1939,7 @@
         position: absolute;
         width: 38px;
         height: 38px;
-        z-index: 90; /* Floats above content, but stays behind the sticky navbar (z-index 100) */
+        z-index: 99; /* Floats above content, but stays behind the sticky navbar (z-index 100) */
         pointer-events: none;
         transform: translate(-50%, -50%);
         will-change: left, top, transform;
@@ -1974,11 +1974,11 @@
         viewBox="0 0 1000 5000"
         preserveAspectRatio="none"
       >
-        <!-- Path starts at y = 150 to sit below the 72px sticky navbar on initial page load, and descends faster in the first two sections to keep the airplane visible in the viewport -->
+        <!-- Path starts at y = 150 to sit above the cards on the right, and descends monotonically to keep the airplane visible in the viewport -->
         <path
           id="flight-path"
           class="flight-path-line"
-          d="M 850,150 C 720,280 200,220 150,650 C 100,900 900,1000 850,1350 C 800,1650 100,1550 120,1850 C 150,2350 950,2250 900,2750 C 850,3250 80,3150 100,3650 C 120,4150 920,4050 880,4550 C 850,4900 650,4920 600,4950"
+          d="M 920,150 C 800,350 200,450 150,1050 C 80,1250 920,1350 850,1700 C 800,1950 150,2050 120,2300 C 100,2550 950,2650 900,3000 C 850,3300 80,3450 100,3900 C 120,4250 920,4350 880,4700 C 850,4900 650,4920 600,4950"
         />
       </svg>
     </div>
@@ -3119,6 +3119,9 @@
       const viewBoxWidth = 1000;
       const viewBoxHeight = 5000;
 
+      let lastScrollPercent = 0;
+      let isScrollingUp = false;
+
       function animateAirplane() {
         if (!airplane || !path || !pathContainer) return;
 
@@ -3140,10 +3143,48 @@
           airplane.classList.remove("take-off");
         }
 
+        // Track scroll direction
+        if (scrollPercent !== lastScrollPercent) {
+          isScrollingUp = scrollPercent < lastScrollPercent;
+          lastScrollPercent = scrollPercent;
+        }
+
         // Calculate position along the SVG path
         const pathLength = path.getTotalLength();
-        const distance = scrollPercent * pathLength;
-        const point = path.getPointAtLength(distance);
+        let distance = scrollPercent * pathLength;
+        let point = path.getPointAtLength(distance);
+
+        // Map local SVG coordinates to absolute page pixel positions
+        const containerWidth = pathContainer.clientWidth;
+        const containerHeight = pathContainer.clientHeight;
+        let pxX = (point.x / viewBoxWidth) * containerWidth;
+        let pxY = (point.y / viewBoxHeight) * containerHeight;
+
+        // Ensure airplane is always below the navbar (at least 120px below scrollY)
+        const minViewportY = 120;
+        const targetMinY = window.scrollY + minViewportY;
+
+        if (pxY < targetMinY && distance < pathLength) {
+          // Search forward along the path to find a point that is below targetMinY
+          let low = distance;
+          let high = pathLength;
+          let foundDistance = distance;
+          while (high - low > 1) {
+            const mid = (low + high) / 2;
+            const midPoint = path.getPointAtLength(mid);
+            const midPxY = (midPoint.y / viewBoxHeight) * containerHeight;
+            if (midPxY >= targetMinY) {
+              high = mid;
+              foundDistance = mid;
+            } else {
+              low = mid;
+            }
+          }
+          distance = foundDistance;
+          point = path.getPointAtLength(distance);
+          pxX = (point.x / viewBoxWidth) * containerWidth;
+          pxY = (point.y / viewBoxHeight) * containerHeight;
+        }
 
         // Calculate tangent angle for rotation
         const nextDistance = Math.min(pathLength, distance + 2);
@@ -3154,16 +3195,11 @@
         );
         const angleDeg = (angleRad * 180) / Math.PI;
 
-        // Map local SVG coordinates to absolute page pixel positions
-        const containerWidth = pathContainer.clientWidth;
-        const containerHeight = pathContainer.clientHeight;
-        const pxX = (point.x / viewBoxWidth) * containerWidth;
-        const pxY = (point.y / viewBoxHeight) * containerHeight;
-
-        // Position and rotate the airplane (SVG points up, so offset by 90deg)
+        // Position and rotate the airplane (SVG points up, so offset by 90deg or -90deg if scrolling up)
+        const rotationAngle = isScrollingUp ? (angleDeg - 90) : (angleDeg + 90);
         airplane.style.left = `${pxX}px`;
         airplane.style.top = `${pxY}px`;
-        airplane.style.transform = `translate(-50%, -50%) rotate(${angleDeg + 90}deg)`;
+        airplane.style.transform = `translate(-50%, -50%) rotate(${rotationAngle}deg)`;
       }
 
       window.addEventListener("scroll", animateAirplane, { passive: true });
