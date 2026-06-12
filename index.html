@@ -814,8 +814,13 @@
     }
 
     /* Window into Germany section */
+    .window-section-wrapper {
+      background: linear-gradient(135deg, #3b8cd4f0 0%, #0c2354 100%);
+      width: 100%;
+    }
+
     .window-section {
-      padding: 45px 5%;
+      padding: 60px 5%;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -828,90 +833,139 @@
     }
 
     .window-text h2 {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
       font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 10px;
+      color: #ffffff;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    .window-text p {
-      color: var(--gray);
-      font-size: 0.9rem;
-      line-height: 1.7;
-      margin-bottom: 16px;
+    .window-text p.window-subtitle {
+      color: #edf5ff;
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 24px;
     }
 
     .window-info-box {
-      background: var(--navy);
+      background: rgba(13, 31, 69, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       color: #fff;
-      border-radius: 18px;
-      padding: 28px 30px;
-      margin-bottom: 20px;
+      border-radius: 28px;
+      padding: 40px;
+      margin-top: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 5;
     }
 
     .window-info-box h3 {
-      font-size: 1rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--orange);
+      margin-bottom: 10px;
+      color: #ffffff !important;
     }
 
-    .window-info-box p {
-      font-size: 0.84rem;
+    .window-info-box p.info-box-desc {
+      font-size: 0.9rem;
       line-height: 1.6;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 24px;
     }
 
-    .window-features {
+    .window-features-new {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-top: 16px;
+      gap: 22px;
+      padding: 0;
+      margin: 0;
     }
 
-    .window-features li {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.85);
+    .feature-item-new {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .feature-icon-new {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      color: #ffffff;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
-    .window-features li::before {
-      content: '✓';
-      color: var(--orange);
+    .feature-icon-new svg {
+      width: 20px;
+      height: 20px;
+      stroke: #ffffff;
+      fill: none;
+    }
+
+    .feature-content-new {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .feature-title-new {
+      font-size: 0.98rem;
       font-weight: 700;
+      color: #ffffff;
+    }
+
+    .feature-desc-new {
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.45;
     }
 
     .window-right {
       position: relative;
+      z-index: 5;
     }
 
-    .window-img-placeholder {
-      width: 100%;
-      height: 420px;
-      background: linear-gradient(135deg, #b8d4f0 0%, #7fa8d4 50%, #e8d4b8 100%);
-      border-radius: 24px;
-      overflow: hidden;
+    .window-main-img {
+      width: 122%;
       position: relative;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      z-index: 2;
+      display: block;
     }
 
-    .window-img-placeholder::before {
-      content: '';
+    .window-watermark {
       position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70%;
-      height: 60%;
-      background: linear-gradient(to bottom, #87ceeb, #4a9fd4);
-      border-radius: 0 0 50% 50%;
-      opacity: 0.8;
+      top: 10%;
+      right: 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.0;
+      color: rgba(255, 255, 255, 0.04);
+      text-align: right;
+      letter-spacing: 4px;
+      z-index: 1;
+      pointer-events: none;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 1024px) {
+      .window-main-img {
+        width: 100% !important;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .window-watermark {
+        display: none;
+      }
     }
 
     /* footertopsec .. */
@@ -2093,25 +2147,69 @@
   </section>
 
   <!-- ── WINDOW INTO GERMANY ── -->
-  <div style="background: var(--white);">
+  <div class="window-section-wrapper">
     <div class="window-section">
       <div class="window-inner">
         <div class="window-text">
-          <h2>Window into Germany 🇩🇪</h2>
-          <p>A rewarding journey built on stability, growth, and opportunity.</p>
+          <h2>Window into Germany <svg width="24" height="16" viewBox="0 0 5 3" style="display: inline-block; vertical-align: middle; margin-left: 10px; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.15);"><rect width="5" height="3" fill="#FFCC00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000000"/></svg></h2>
+          <p class="window-subtitle">A rewarding journey built on stability, growth, and opportunity.</p>
           <div class="window-info-box">
             <h3>A life style designed for growth</h3>
-            <p>Germany offers healthcare professionals more than career opportunities — it offers a secure, balanced,
-              and globally connected way of living.</p>
-            <ul class="window-features">
-              <li>High-Quality Healthcare System</li>
-              <li>Language & Cultural Integration</li>
-              <li>Healthcare Career Pathways</li>
+            <p class="info-box-desc">Germany offers healthcare professionals more than career opportunities — it offers a secure, balanced, and globally connected way of living.</p>
+            <ul class="window-features-new">
+              <li class="feature-item-new">
+                <div class="feature-icon-new">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="m9 11 2 2 4-4"/>
+                  </svg>
+                </div>
+                <div class="feature-content-new">
+                  <span class="feature-title-new">Safe & Structured Environment</span>
+                  <span class="feature-desc-new">Clean cities, reliable systems, and a lifestyle built around comfort, safety, and stability.</span>
+                </div>
+              </li>
+              <li class="feature-item-new">
+                <div class="feature-icon-new">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                    <path d="M2 12h20"/>
+                  </svg>
+                </div>
+                <div class="feature-content-new">
+                  <span class="feature-title-new">International Exposure</span>
+                  <span class="feature-desc-new">Experience multicultural communities, global opportunities, and the freedom to explore Europe.</span>
+                </div>
+              </li>
+              <li class="feature-item-new">
+                <div class="feature-icon-new">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="3" width="16" height="16" rx="2"/>
+                    <path d="M4 11h16"/>
+                    <path d="M12 3v8"/>
+                    <path d="m8 19-2 3"/>
+                    <path d="m18 22-2-3"/>
+                    <circle cx="8" cy="15" r="1"/>
+                    <circle cx="16" cy="15" r="1"/>
+                  </svg>
+                </div>
+                <div class="feature-content-new">
+                  <span class="feature-title-new">Modern Everyday Living</span>
+                  <span class="feature-desc-new">Efficient public transport, advanced healthcare systems, and infrastructure designed for convenience.</span>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
         <div class="window-right">
-         <img src="./myimages/girks.png" alt="" style="width: 122%;">
+          <div class="window-watermark">
+            <div>GLOBAL</div>
+            <div>FUTURE</div>
+            <div>NEW</div>
+            <div>BEGINNING</div>
+          </div>
+          <img src="./myimages/girks.png" alt="" class="window-main-img">
         </div>
       </div>
     </div>
